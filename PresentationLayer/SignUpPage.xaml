@@ -1,0 +1,117 @@
+﻿<Page x:Class="PresentationLayer.SignUpPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:PresentationLayer"
+      mc:Ignorable="d" 
+      d:DesignHeight="750" d:DesignWidth="1400"
+      Title="SignUpPage">
+    
+    <Page.Background>
+        <ImageBrush ImageSource="images\login_background.jpg" Stretch="UniformToFill" Opacity="0.75"/>
+    </Page.Background>
+
+    <Grid>
+        <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+            <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.5*"/>
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="0.5*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.5*"/>
+                <RowDefinition Height="8*"/>
+                <RowDefinition Height="0.5*"/>
+            </Grid.RowDefinitions>
+
+            <StackPanel x:Name="signup_spanel" Grid.Column="1" Grid.Row="1" VerticalAlignment="Center" Background="White">
+            
+                <Label x:Name="welcome_lbl" Content="Welcome to Sports Hub" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="40" FontFamily="Candara"  Margin="0,25,0,0" Foreground="#663300"/>
+                
+                <Label x:Name="info_lbl" Content="Please enter required information to register" HorizontalContentAlignment="Center" FontSize="18" Margin="0,25,0,0"/>
+                
+                <Grid x:Name="signup_fields_grid">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                
+                    <StackPanel Margin="60,0,0,0" Grid.Column="0">
+                        <StackPanel x:Name="firstName_spanel" Orientation="Horizontal" Margin="0,25,0,0" HorizontalAlignment="Left">
+                            <TextBlock x:Name="firstName_txtBlock" TextWrapping="Wrap" Text="First Name:" FontSize="22" Width="180"/>
+                            <TextBox x:Name="firstName_txtBox" Height="25" TextWrapping="Wrap" Width="200" FontSize="16" Margin="20,0,0,0" VerticalContentAlignment="Center"/>
+                        </StackPanel>
+                    
+                        <StackPanel x:Name="lastName_spanel" Orientation="Horizontal" Margin="0,20,0,0" HorizontalAlignment="Left">
+                            <TextBlock x:Name="lastName_txtBlock" TextWrapping="Wrap" Text="Last Name:" FontSize="22" Width="180"/>
+                                <TextBox x:Name="lastName_txtBox" Height="25" TextWrapping="Wrap" Width="200" FontSize="16" Margin="20,0,0,0" VerticalContentAlignment="Center"/>
+                        </StackPanel>
+                        
+                        <StackPanel x:Name="userName_spanel" Orientation="Horizontal" Margin="0,20,0,0" HorizontalAlignment="Left">
+                            <TextBlock x:Name="userName_txtBlock" TextWrapping="Wrap" Text="Username:" FontSize="22" Width="180"/>
+                                <TextBox x:Name="userName_txtBox" Height="25" TextWrapping="Wrap" Width="200" FontSize="16" Margin="20,0,0,0" VerticalContentAlignment="Center"/>
+                        </StackPanel>
+                        
+                        <StackPanel x:Name="email_spanel" Margin="0,20,0,0" Orientation="Horizontal" HorizontalAlignment="Left">
+                            <TextBlock x:Name="email_txtBlock" TextWrapping="Wrap" Text="Email:" FontSize="22" Width="180"/>
+                                <TextBox x:Name="email_txtBox" Height="25" Width="200" FontSize="16" Margin="20,0,0,0" VerticalContentAlignment="Center"/>
+                        </StackPanel>
+                        
+                        <StackPanel x:Name="password_spanel" Margin="0,20,0,0" Orientation="Horizontal" HorizontalAlignment="Left">
+                            <TextBlock x:Name="password_txtBlock" TextWrapping="Wrap" Text="Password:" FontSize="22" Width="180"/>
+                                <PasswordBox x:Name="password_txtBox" Height="25" Width="200" FontSize="16" Margin="20,0,0,0" VerticalContentAlignment="Center"/>
+                        </StackPanel>
+                        
+                        <StackPanel x:Name="confirmPass_spanel" Margin="0,20,0,0" Orientation="Horizontal" HorizontalAlignment="Left">
+                            <TextBlock x:Name="confirmPass_txtBlock" TextWrapping="Wrap" Text="Confirm Password:" FontSize="22" Width="180"/>
+                                <PasswordBox x:Name="confirmPass_txtBox" Height="25" Width="200" FontSize="16" Margin="20,0,0,0" VerticalContentAlignment="Center"/>
+                        </StackPanel>
+                        
+                        <StackPanel x:Name="phone_spanel" Orientation="Horizontal" Margin="0,20,0,0" HorizontalAlignment="Left">
+                            <TextBlock x:Name="phone_txtBlock" TextWrapping="Wrap" Text="Phone Number:" FontSize="22" Width="180"/>
+                                <TextBox x:Name="phone_txtBox" Height="25" TextWrapping="Wrap" Width="200" FontSize="16" Margin="20,0,0,0" VerticalContentAlignment="Center"/>
+                        </StackPanel>
+                    
+                    </StackPanel>
+
+                    <StackPanel Grid.Column="1">
+                    
+                        <StackPanel x:Name="profilePic_spanel" Orientation="Horizontal" Margin="0,30,0,0" HorizontalAlignment="Left">
+                            <TextBlock x:Name="profilePic_txtBlock" TextWrapping="Wrap" Text="Profile Picture:" FontSize="22" Width="180" VerticalAlignment="Center"/>
+                                <Image x:Name="profilePic_img" Source="images\profilePic.png" Height="200"/>
+                        </StackPanel>
+                        
+                        <StackPanel x:Name="gender_spanel" Orientation="Horizontal" Margin="0,20,0,0" HorizontalAlignment="Left">
+                            <TextBlock x:Name="gender_txtBlock" TextWrapping="Wrap" Text="Gender:" FontSize="22" Width="180"/>
+                            
+                            <ComboBox x:Name="gender_combo" Height="25" Width="200" FontSize="16" Margin="20,0,0,0">
+                                <ComboBoxItem x:Name="gender_male" Content="Male"/>
+                                <ComboBoxItem x:Name="gender_female" Content="Female"/>
+                                <ComboBoxItem x:Name="gender_preferNot" Content="Prefer not to say"/>
+                            </ComboBox>
+                        
+                        </StackPanel>
+                        
+                        <StackPanel x:Name="dob_spanel" Orientation="Horizontal" Margin="0,20,0,0" HorizontalAlignment="Left">
+                            <TextBlock x:Name="dob_txtBlock" TextWrapping="Wrap" Text="Date of Birth:" FontSize="22" Width="180"/>
+                                <DatePicker x:Name="dob_datePicker" Height="32" Width="200" FontSize="16" Margin="20,0,0,0" DisplayDateEnd="2004-12-31" DisplayDateStart="1950-01-01" VerticalContentAlignment="Center"/>
+                        </StackPanel>
+                    
+                    </StackPanel>
+                
+                </Grid>
+
+                <StackPanel x:Name="login_spanel" Orientation="Horizontal" HorizontalAlignment="Center">
+                    <Label x:Name="login_lbl" HorizontalContentAlignment="Center"  Content="Already have an account?" FontSize="17" Margin="0,25,0,0"/>
+                        <Button x:Name="loginNow_btn" Content="Login Now!" Background="White" BorderBrush="White" FontSize="17" VerticalAlignment="Bottom" Margin="0,0,0,5" Foreground="#663300" Click="loginNow_btn_Click" Style="{DynamicResource ButtonStyle3}" />
+                </StackPanel>
+                
+                <Button x:Name="SignUp_Btn" Content="Sign Up" HorizontalAlignment="Center" VerticalAlignment="Center" Width="100" Height="50" FontSize="20" Margin="0,20,0,35" Background="#663300" Foreground="White" Style="{DynamicResource ButtonStyle1}" Click="SignUp_Btn_Click"/>
+            
+            </StackPanel>
+        </Grid>
+        </ScrollViewer>
+    </Grid>
+</Page>
