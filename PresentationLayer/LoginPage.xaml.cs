@@ -26,18 +26,37 @@ namespace PresentationLayer
             InitializeComponent();
         }
 
-        private void Login_Btn_Click(object sender, RoutedEventArgs e)
+        private bool checkUser()
         {
-            //Database1Entities database1 = new Database1Entities();
-            //var usernamequery = from username in database1.Customer
-            //                    select username;
-            foreach (Window window in Application.Current.Windows)
+            //checking username and password validity
+            var usernamesList = from customer in DataLists.customers
+                                select new { customer.ID, customer.UserName, customer.Password };
+            foreach (var user in usernamesList)
             {
-                if (window.GetType() == typeof(MainWindow))
+                //Console.WriteLine(user.ToString());
+                if (user.UserName.Equals(userName_txtBox.Text) && user.Password.Equals(password_txtBox.Password))
                 {
-                    (window as MainWindow).Main.Content = new CustomerDashboard();
+                    return true;
                 }
             }
+            return false;
+        }
+
+        private void Login_Btn_Click(object sender, RoutedEventArgs e)
+        {
+            if (!checkUser())
+            {
+                MessageBox.Show("Invalid Username or Password!");
+            }
+
+            else
+                foreach (Window window in Application.Current.Windows)
+                {
+                    if (window.GetType() == typeof(MainWindow))
+                    {
+                        (window as MainWindow).Main.Content = new CustomerDashboard();
+                    }
+                }
         }
 
         private void register_btn_Click(object sender, RoutedEventArgs e)

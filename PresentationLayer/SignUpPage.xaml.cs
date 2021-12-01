@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using DAL;
+using BussinessLogicLayer;
 
 namespace PresentationLayer
 {
@@ -38,6 +40,15 @@ namespace PresentationLayer
 
         private void SignUp_Btn_Click(object sender, RoutedEventArgs e)
         {
+            //checking data validity
+            // email
+            if (!email_txtBox.Text.Contains("@")) 
+            {
+                MessageBox.Show("Incorrect Email");
+                return;
+            }
+            //password
+
             foreach (Window window in Application.Current.Windows)
             {
                 if (window.GetType() == typeof(MainWindow))
