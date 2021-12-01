@@ -48,6 +48,11 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Data.Entity.Design" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -56,7 +61,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="DataLists.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -67,6 +72,25 @@
       <DependentUpon>Database1.mdf</DependentUpon>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="images\badminton_net.jpg" />
+    <Content Include="images\badminton_racket.jpg" />
+    <Content Include="images\badminton_set.jpg" />
+    <Content Include="images\badminton_shuttlecock.jpg" />
+    <Content Include="images\feedback.png" />
+    <Content Include="images\login_background.jpg" />
+    <Content Include="images\order.png" />
+    <Content Include="images\payment_icon.png" />
+    <Content Include="images\profilePic.png" />
+    <Content Include="images\shopping-cart.png" />
+    <Content Include="images\tabletennis_ball.jpg" />
+    <Content Include="images\tabletennis_net.jpg" />
+    <Content Include="images\tabletennis_racket.jpg" />
+    <Content Include="images\tabletennis_set.jpg" />
+    <Content Include="images\tabletennis_table.png" />
+    <Content Include="images\tennis_ball.png" />
+    <Content Include="images\tennis_net.jpg" />
+    <Content Include="images\tennis_racket.jpg" />
+    <Content Include="images\tennis_set.jpg" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.1">
@@ -79,6 +103,18 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BussinessLogicLayer\BussinessLogicLayer.csproj">
+      <Project>{770f8316-e14c-410d-8081-0172afd567f9}</Project>
+      <Name>BussinessLogicLayer</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -11,6 +11,8 @@ namespace BussinessLogicLayer
     public class Customer
     {
         //data fields / properties
+        public static int totalCustomers { get; set; } //to automatically assign an id
+        public int ID { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string UserName { get; set; }
@@ -35,6 +37,8 @@ namespace BussinessLogicLayer
             PhoneNumber = phoneno;
             Orders = new List<Order>();
             cart = new Cart();
+            totalCustomers++;
+            ID = totalCustomers;
         }
     }
 }

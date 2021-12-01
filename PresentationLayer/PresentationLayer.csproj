@@ -175,5 +175,15 @@
   <ItemGroup>
     <Resource Include="images\tabletennis_set.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BussinessLogicLayer\BussinessLogicLayer.csproj">
+      <Project>{770f8316-e14c-410d-8081-0172afd567f9}</Project>
+      <Name>BussinessLogicLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DAL\DataAccessLayer.csproj">
+      <Project>{93be232a-aa7e-4c61-8188-28a84d0c7452}</Project>
+      <Name>DataAccessLayer</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

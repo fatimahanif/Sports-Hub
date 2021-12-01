@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using DAL;
 
 namespace PresentationLayer
 {
@@ -27,6 +28,9 @@ namespace PresentationLayer
 
         private void Login_Btn_Click(object sender, RoutedEventArgs e)
         {
+            //Database1Entities database1 = new Database1Entities();
+            //var usernamequery = from username in database1.Customer
+            //                    select username;
             foreach (Window window in Application.Current.Windows)
             {
                 if (window.GetType() == typeof(MainWindow))
