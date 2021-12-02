@@ -228,118 +228,7 @@
                             </ListBox.ItemTemplate>
                         </ListBox>
 
-                        <!--<StackPanel x:Name="products_badminton_spanel" Margin="10,0,0,0">
-                            <Label x:Name="products_badminton_lbl" Content="Badminton" FontSize="20"/>
-                            <StackPanel x:Name="products_badminton_products_sPanel" Orientation="Horizontal" CanHorizontallyScroll="True" Background="#fff">
-
-                                <Border BorderThickness="3" BorderBrush="#eee"  Margin="0,0,20,0">
-                                    <StackPanel x:Name="product_badminton_rackets" Margin="20,20,20,20">
-                                        <Image x:Name="product_badminton_racket_image"  Width="200" Height="200" Source="images\badminton_racket.jpg"/>
-                                        <Label x:Name="product_baminton_racket_label" Content="Badminton Rackets" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-                                    </StackPanel>
-                                </Border>
-
-                                <Border BorderThickness="3" BorderBrush="#eee" Margin="0,0,20,0">
-                                    <StackPanel x:Name="product_badminton_shuttlecock" Margin="20,20,20,20">
-                                        <Image x:Name="product_badminton_shuttlecock_image"  Width="200" Height="200" Source="images\badminton_shuttlecock.jpg"/>
-                                        <Label x:Name="product_baminton_shuttlecock_label" Content="Badminton Shuttlecock" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-                                    </StackPanel>
-                                </Border>
-
-                                <Border BorderThickness="3" BorderBrush="#eee" Margin="0,0,20,0">
-                                    <StackPanel x:Name="product_badminton_net" Margin="20,20,20,20">
-                                        <Image x:Name="product_badminton_net_image"  Width="200" Height="200" Source="images\badminton_net.jpg" />
-                                        <Label x:Name="product_baminton_net_label" Content="Badminton Net" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-                                    </StackPanel>
-                                </Border>
-
-                                <Border BorderThickness="3" BorderBrush="#eee" Margin="0,0,20,0">
-                                    <StackPanel x:Name="product_badminton_set" Margin="20,20,20,20">
-                                        <Image x:Name="product_badminton_set_image"  Width="200" Height="200" Source="images\badminton_set.jpg" />
-                                        <Label x:Name="product_baminton_set_label" Content="Badminton Set" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-                                    </StackPanel>
-                                </Border>
-                                
-                            </StackPanel>
-                        </StackPanel>-->
-
-                        <!--<StackPanel x:Name="products_tennis_spanel" Margin="10,20,0,0">
-                            <Label x:Name="products_tennis_lbl" Content="Tennis" FontSize="20"/>
-                            <StackPanel x:Name="products_tennis_products_sPanel" Orientation="Horizontal" CanHorizontallyScroll="True" Background="#fff">
-
-                                <Border BorderThickness="3" BorderBrush="#eee" Margin="0,0,20,0">
-                                    <StackPanel x:Name="products_tennis_rackets" Margin="20,20,20,20">
-                                        <Image x:Name="products_tennis_racket_image"  Width="200" Height="200" Source="images\tennis_racket.jpg"/>
-                                        <Label x:Name="products_tennis_racket_label" Content="Tennis Rackets" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-                                    </StackPanel>
-                                </Border>
-
-                                <Border BorderThickness="3" BorderBrush="#eee" Margin="0,0,20,0">
-                                    <StackPanel x:Name="products_tennis_ball" Margin="20,20,20,20">
-                                        <Image x:Name="products_tennis_ball_image"  Width="200" Height="200" Source="images\tennis_ball.png"/>
-                                        <Label x:Name="products_tennis_ball_label" Content="Tennis Ball" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-                                    </StackPanel>
-                                </Border>
-
-                                <Border BorderThickness="3" BorderBrush="#eee" Margin="0,0,20,0">
-                                    <StackPanel x:Name="products_tennis_net" Margin="20,20,20,20">
-                                        <Image x:Name="products_tennis_net_image"  Width="200" Height="200" Source="images\tennis_net.jpg"/>
-                                        <Label x:Name="products_tennis_net_label" Content="Tennis Net" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-                                    </StackPanel>
-                                </Border>
-
-                                <Border BorderThickness="3" BorderBrush="#eee" Margin="0,0,20,0">
-                                    <StackPanel x:Name="product_tennis_set" Margin="20,20,20,20">
-                                        <Image x:Name="product_tennis_set_image"  Width="200" Height="200" Source="images\tennis_set.jpg" />
-                                        <Label x:Name="product_tennis_set_label" Content="Tennis Set" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-                                    </StackPanel>
-                                </Border>
-                                
-                            </StackPanel>
-                        </StackPanel>-->
-
-                        <!--<StackPanel x:Name="products_tabletennis_spanel" Margin="10,20,0,0">
-                            <Label x:Name="products_tabletennis_lbl" Content="Table Tennis" FontSize="20"/>
-                            <StackPanel x:Name="products_tabletennis_products_sPanel" Orientation="Horizontal" CanHorizontallyScroll="True" Background="#fff">
-
-                                <Border BorderThickness="3" BorderBrush="#eee" Margin="0,0,20,0">
-                                    <StackPanel x:Name="products_tabletennis_rackets" Margin="20,20,20,20">
-                                        <Image x:Name="products_tabletennis_racket_image"  Width="200" Height="200" Source="images\tabletennis_racket.jpg"/>
-                                        <Label x:Name="products_tabletennis_racket_label" Content="Table Tennis Rackets" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-                                    </StackPanel>
-                                </Border>
-
-                                <Border BorderThickness="3" BorderBrush="#eee" Margin="0,0,20,0">
-                                    <StackPanel x:Name="products_tabletennis_ball" Margin="20,20,20,20">
-                                        <Image x:Name="products_tabletennis_ball_image"  Width="200" Height="200" Source="images\tabletennis_ball.jpg"/>
-                                        <Label x:Name="products_tabletennis_ball_label" Content="Table Tennis Ball" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-                                    </StackPanel>
-                                </Border>
-
-                                <Border BorderThickness="3" BorderBrush="#eee" Margin="0,0,20,0">
-                                    <StackPanel x:Name="products_tabletennis_net" Margin="20,20,20,20">
-                                        <Image x:Name="products_tabletennis_net_image"  Width="200" Height="200" Source="images\tabletennis_net.jpg"/>
-                                        <Label x:Name="products_tabletennis_net_label" Content=" Table Tennis Net" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-                                    </StackPanel>
-                                </Border>
-
-                                <Border BorderThickness="3" BorderBrush="#eee" Margin="0,0,20,0">
-                                    <StackPanel x:Name="products_tabletennis_table" Margin="20,20,20,20">
-                                        <Image x:Name="products_tabletennis_table_image"  Width="200" Height="200" Source="images\tabletennis_table.png"/>
-                                        <Label x:Name="products_tabletennis_table_label" Content="Table" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-                                    </StackPanel>
-                                </Border>
-
-                                <Border BorderThickness="3" BorderBrush="#eee" Margin="0,0,20,0">
-                                    <StackPanel x:Name="products_tabletennis_set" Margin="20,20,20,20">
-                                        <Image x:Name="products_tabletennis_set_image"  Width="200" Height="200" Source="images\tabletennis_set.jpg"/>
-                                        <Label x:Name="products_tabletennis_set_label" Content=" Table Tennis Set" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-                                    </StackPanel>
-                                </Border>
-                                
-                            </StackPanel>
-                        </StackPanel>-->
-
+                        
 
 
                     </StackPanel>
@@ -403,88 +292,61 @@
                             </ListBox.ItemTemplate>
                         </ListBox>
                         
-                        <!--<StackPanel x:Name="orders_main_spanel" Margin="20,20,20,20">
-                            <Grid x:Name="order_1"  Background="#eee" Margin="0,5,0,5">
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="*"/>
-                                    <ColumnDefinition Width="*"/>
-                                    <ColumnDefinition Width="3*"/>
-                                    <ColumnDefinition Width="*"/>
-                                    <ColumnDefinition Width="*"/>
-                                    <ColumnDefinition Width="*"/>
-                                </Grid.ColumnDefinitions>
-                                <Label x:Name="order_id" Content="Order # 1234" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="#663300" FontSize="22" FontWeight="Bold"/>
-                                <StackPanel x:Name="delivery_status_spanel" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center">
-                                    <Label x:Name="delivery_status_lbl" Content="Delivery Status"  VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="#4f2507" FontSize="20" FontWeight="SemiBold"/>
-                                    <Label x:Name="delivery_status" Content="Delivered"  VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                                </StackPanel>
-                                <StackPanel x:Name="order_details_spanel" Grid.Column="2" VerticalAlignment="Center" Margin="0,15,0,15">
-                                    <Label x:Name="order_details" Content="Order Details" HorizontalAlignment="Center"  Foreground="#4f2507" FontSize="20" FontWeight="SemiBold"/>
-                                    <Label Content="10x Badminton Sets                       PKR 10,000/-" Margin="20,0,0,0" HorizontalAlignment="Center"/>
-                                    <Label Content="7x Tennis Sets                                  PKR 14,000/-" Margin="20,0,0,0" HorizontalAlignment="Center"/>
-                                    <Label Content="3x Table Tennis Tables                   PKR 15,000/-" Margin="20,0,0,0" HorizontalAlignment="Center"/>
-                                </StackPanel>
-                                <StackPanel x:Name="price_spanel" Grid.Column="3" HorizontalAlignment="Center" VerticalAlignment="Center">
-                                    <Label x:Name="price_label" Content="Price"  VerticalAlignment="Center" HorizontalAlignment="Center"  Foreground="#4f2507" FontSize="20" FontWeight="SemiBold"/>
-                                    <Label x:Name="price_" Content="PKR 39,000/-"  VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                                </StackPanel>
-                                <StackPanel x:Name="discount_spanel" Grid.Column="4" VerticalAlignment="Center" HorizontalAlignment="Center">
-                                    <Label x:Name="discount_label" Content="Discount"  VerticalAlignment="Center" HorizontalAlignment="Center"  Foreground="#4f2507" FontSize="20" FontWeight="SemiBold"/>
-                                    <Label x:Name="discount_l" Content="PKR 0/-" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                                </StackPanel>
-                                <StackPanel x:Name="payment_spanel" Grid.Column="5" VerticalAlignment="Center" HorizontalAlignment="Center">
-                                    <Label x:Name="payment_label" Content="Payment" VerticalAlignment="Center" HorizontalAlignment="Center"  Foreground="#4f2507" FontSize="20" FontWeight="SemiBold"/>
-                                    <Label x:Name="payment_" Content="Cash-on-Delivery" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                                </StackPanel>
-                            </Grid>
-                            <Grid x:Name="order_2"  Background="#eee"  Margin="0,5,0,5">
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="*"/>
-                                    <ColumnDefinition Width="*"/>
-                                    <ColumnDefinition Width="3*"/>
-                                    <ColumnDefinition Width="*"/>
-                                    <ColumnDefinition Width="*"/>
-                                    <ColumnDefinition Width="*"/>
-                                </Grid.ColumnDefinitions>
-                                <Label x:Name="order2_id" Content="Order # 1234" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="#663300" FontSize="22" FontWeight="Bold"/>
-                                <StackPanel x:Name="delivery2_status_spanel" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center">
-                                    <Label x:Name="delivery2_status_lbl" Content="Delivery Status"  VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="#4f2507" FontSize="20" FontWeight="SemiBold"/>
-                                    <Label x:Name="delivery2_status" Content="Delivered"  VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                                </StackPanel>
-                                <StackPanel x:Name="order2_details_spanel" Grid.Column="2" VerticalAlignment="Center" Margin="0,15,0,15">
-                                    <Label x:Name="order2_details" Content="Order Details" HorizontalAlignment="Center"  Foreground="#4f2507" FontSize="20" FontWeight="SemiBold"/>
-                                    <Label Content="10x Badminton Sets" Margin="20,0,0,0"/>
-                                    <Label Content="7x Tennis Sets" Margin="20,0,0,0"/>
-                                    <Label Content="3x Table Tennis Tables" Margin="20,0,0,0"/>
-                                </StackPanel>
-                                <StackPanel x:Name="price2_spanel" Grid.Column="3" HorizontalAlignment="Center" VerticalAlignment="Center">
-                                    <Label x:Name="price2_label" Content="Price"  VerticalAlignment="Center" HorizontalAlignment="Center"  Foreground="#4f2507" FontSize="20" FontWeight="SemiBold"/>
-                                    <Label x:Name="price_2" Content="PKR 5000/-"  VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                                </StackPanel>
-                                <StackPanel x:Name="discount2_spanel" Grid.Column="4" VerticalAlignment="Center" HorizontalAlignment="Center">
-                                    <Label x:Name="discount2_label" Content="Discount"  VerticalAlignment="Center" HorizontalAlignment="Center"  Foreground="#4f2507" FontSize="20" FontWeight="SemiBold"/>
-                                    <Label x:Name="discount_2" Content="PKR 0/-" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                                </StackPanel>
-                                <StackPanel x:Name="payment2_spanel" Grid.Column="5" VerticalAlignment="Center" HorizontalAlignment="Center">
-                                    <Label x:Name="payment2_label" Content="Payment" VerticalAlignment="Center" HorizontalAlignment="Center"  Foreground="#4f2507" FontSize="20" FontWeight="SemiBold"/>
-                                    <Label x:Name="payment2_" Content="Cash-on-Delivery" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                                </StackPanel>
-                            </Grid>
-
-                            --><!--<DataGrid>
-                                
-                            </DataGrid>--><!--
-
-                        </StackPanel>-->
                     </StackPanel>
                 </TabItem>
 
                 <TabItem Header="Payments" Height="50" Width="120" Style="{DynamicResource TabItemStyle1}">
-                    <TextBlock Foreground="Black" Text="payments tab"/>
+
+                    <Label Content="payment tab"/>
+
                 </TabItem>
 
                 <TabItem Header="Cart" Height="50" Width="120" Style="{DynamicResource TabItemStyle1}">
-                    <TextBlock Foreground="Black" Text="cart tab"/>
+                    <StackPanel>
+                        <Grid x:Name="cart_header_grid">
+                            <Label x:Name="cart_header_label" Content="Cart" FontSize="40" Foreground="#663300"/>
+                            <Button x:Name="cart_logout_btn" Content="Logout" VerticalAlignment="Center" Width="90" Click="Logout_Btn_Click" Height="45" FontSize="20" Background="#663300" Foreground="White" Style="{DynamicResource ButtonStyle1}" HorizontalAlignment="Right" Margin="0,0,50,0"/>
+                            <Button x:Name="cart_refresh_btn" Content="Refresh" VerticalAlignment="Center" Width="90" Click="cart_refresh_btn_Click" Height="45" FontSize="20" Background="#663300" Foreground="White" Style="{DynamicResource ButtonStyle1}" HorizontalAlignment="Right" Margin="0,0,170,0"/>
+                        </Grid>
+
+                        <ListBox x:Name="cart_listBox" HorizontalAlignment="Center" FontSize="20" SelectionChanged="products_listBox_SelectionChanged">
+                            <ListBox.ItemTemplate>
+                                <DataTemplate>
+                                    <StackPanel Width="900">
+                                        <Label Margin="10,30,10,10"  Content="{Binding ProductName}" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontSize="26"/>
+                                        <Grid Margin="10,10,10,20" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition/>
+                                                <ColumnDefinition/>
+                                            </Grid.ColumnDefinitions>
+                                            <StackPanel Grid.Column="0">
+                                                <Border BorderThickness="3" BorderBrush="#eee" >
+                                                    <Image Width="200" Height="200" Source="{Binding ProductID , Converter={x:Static local:ImageConverter.imageConverter}}"/>
+                                                </Border>
+                                            </StackPanel>
+                                            <StackPanel Grid.Column="1" VerticalAlignment="Center" Margin="50,0,0,0">
+                                                <StackPanel Orientation="Horizontal">
+                                                    <Label Content="Price: PKR" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                                                    <Label Content="{Binding Price}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                                                    <Label Content="/-" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                                                </StackPanel>
+                                                <StackPanel Orientation="Horizontal">
+                                                    <Label Content="Unit: " HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                                                    <Label Content="{Binding Unit}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                                                </StackPanel>
+                                                <StackPanel Orientation="Horizontal">
+                                                    <Label Content="Product Category: " HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                                                    <Label Content="{Binding productCategory}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                                                </StackPanel>
+                                            </StackPanel>
+                                        </Grid>
+                                    </StackPanel>
+
+                                </DataTemplate>
+                            </ListBox.ItemTemplate>
+                        </ListBox>
+
+                    </StackPanel>
                 </TabItem>
 
             </TabControl>

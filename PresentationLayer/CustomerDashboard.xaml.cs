@@ -40,6 +40,7 @@ namespace PresentationLayer
             InitializeComponent();
             this.customer = customer;
             products_listBox.ItemsSource = DataLists.products;
+            cart_listBox.ItemsSource = customer.cart;
             orders_listbox.ItemsSource = customer.Orders;
         }
 
@@ -87,12 +88,16 @@ namespace PresentationLayer
             }
         }
 
-        private void displayProductDetails( Product product ) 
+        private void displayProductDetails( Product product )
         {
-            ProductDetails productDetails = new ProductDetails(product);
+            ProductDetails productDetails = new ProductDetails(product, customer);
             productDetails.Show();
             //MessageBox.Show(""+product.ProductName);
         }
 
+        private void cart_refresh_btn_Click(object sender, RoutedEventArgs e)
+        {
+            cart_listBox.Items.Refresh();
+        }
     }
 }

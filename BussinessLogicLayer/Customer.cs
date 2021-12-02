@@ -23,7 +23,8 @@ namespace BussinessLogicLayer
         //orders of the customer
         public List<Order> Orders { get; set; }
         //cart of the customer
-        public Cart cart { get; set; }
+        public List<Product> cart = new List<Product>();
+        //public Cart cart { get; set; }
 
         //constructor
         public Customer(string firstname, string lastname, string username, string passwoord, Gender gender, DateTime dob, string phoneno) 
@@ -36,7 +37,7 @@ namespace BussinessLogicLayer
             DOB = dob;
             PhoneNumber = phoneno;
             Orders = new List<Order>();
-            cart = new Cart();
+           // cart = new Cart();
             totalCustomers++;
             ID = totalCustomers;
         }

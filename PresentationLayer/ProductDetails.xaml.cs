@@ -22,11 +22,12 @@ namespace PresentationLayer
     public partial class ProductDetails : Window
     {
         Product product;
+        Customer customer;
         public ProductDetails()
         {
             InitializeComponent();
         }
-        public ProductDetails(Product product)
+        public ProductDetails(Product product, Customer customer)
         {
             InitializeComponent();
             this.product = product;
@@ -36,10 +37,12 @@ namespace PresentationLayer
             product_price.Content += product.Price.ToString();
             product_category.Content += product.productCategory.ToString();
             //product_img.Source = product.ImagePath;
+            this.customer = customer;
         }
 
         private void Cart_Btn_Click(object sender, RoutedEventArgs e)
         {
+            customer.cart.Add(this.product);
             MessageBox.Show("Product added to cart");
         }
     }
