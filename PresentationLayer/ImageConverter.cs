@@ -20,19 +20,49 @@ namespace PresentationLayer
         {
             var image = "images/badminton_set.jpg";
 
-            switch ((ProductCategory)value)
+            switch ((int)value)
             {
-                case ProductCategory.Badminton:
-                    image = "images/badminton_set.jpg";
-                    Console.WriteLine("badminton");
+                case 1:
+                    image = "images/badminton_racket.jpg";
+                   // Console.WriteLine("badminton");
                     break;
 
-                case ProductCategory.TableTennis:
+                case 2:
+                    image = "images/badminton_shuttlecock.jpg";
+                    break;
+
+                case 3:
+                    image = "images/badminton_net.jpg";
+                    break;
+                case 4:
+                    image = "images/badminton_set.jpg";
+                    break;
+                case 5:
+                    image = "images/tennis_racket.jpg";
+                    break;
+                case 6:
+                    image = "images/tennis_ball.png";
+                    break;
+                case 7:
+                    image = "images/tennis_net.jpg";
+                    break;
+                case 8:
+                    image = "images/tennis_set.jpg";
+                    break;
+                case 9:
+                    image = "images/tabletennis_racket.jpg";
+                    break;
+                case 10:
+                    image = "images/tabletennis_ball.jpg";
+                    break;
+                case 11:
+                    image = "images/tabletennis_net.jpg";
+                    break;
+                case 12:
                     image = "images/tabletennis_set.jpg";
                     break;
-
-                case ProductCategory.Tennis:
-                    image = "images/tennis_set.jpg";
+                case 13:
+                    image = "images/tabletennis_table.png";
                     break;
             }
 

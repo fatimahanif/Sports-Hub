@@ -20,6 +20,8 @@
             <Label x:Name="product_unit" Content="Unit: "/>
             <Button x:Name="addCart" Content="Add to Cart" Margin="0,30,0,0" Width="150" Click="Cart_Btn_Click" Height="45" FontSize="20" Background="#663300" Foreground="White" Style="{DynamicResource ButtonStyle1}" />
         </StackPanel>
-        <Image x:Name="product_img" Width="200" Height="200" Source="{Binding ImagePath}" Grid.Column="1"/>
+        <Image Width="200" Height="200" Source="{Binding ProductID , Converter={x:Static local:ImageConverter.imageConverter}}" Grid.Column="1"/>
+
+        <!--<Image x:Name="product_img" Width="200" Height="200" Source="{Binding ImagePath}" Grid.Column="1"/>-->
     </Grid>
 </Window>

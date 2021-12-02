@@ -11,7 +11,7 @@ namespace DAL
     {
         public static List<Customer> customers = new List<Customer>()
         {
-            new Customer("Fatima", "Hanif", "fatima", "Fatima123!", Gender.Female, new DateTime(2002,8,31), "03185152910")
+            new Customer("Fatima", "Hanif", "fatima", "123", Gender.Female, new DateTime(2002,8,31), "03185152910")
             {
                 Orders = new List<Order>()
                 {
