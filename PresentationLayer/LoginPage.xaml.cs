@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using DAL;
+using BussinessLogicLayer;
 
 namespace PresentationLayer
 {
@@ -21,6 +22,7 @@ namespace PresentationLayer
     /// </summary>
     public partial class LoginPage : Page
     {
+        Customer customer;
         public LoginPage()
         {
             InitializeComponent();
@@ -30,12 +32,13 @@ namespace PresentationLayer
         {
             //checking username and password validity
             var usernamesList = from customer in DataLists.customers
-                                select new { customer.ID, customer.UserName, customer.Password };
+                                select customer;
             foreach (var user in usernamesList)
             {
                 //Console.WriteLine(user.ToString());
                 if (user.UserName.Equals(userName_txtBox.Text) && user.Password.Equals(password_txtBox.Password))
                 {
+                    customer = user;
                     return true;
                 }
             }
@@ -54,7 +57,7 @@ namespace PresentationLayer
                 {
                     if (window.GetType() == typeof(MainWindow))
                     {
-                        (window as MainWindow).Main.Content = new CustomerDashboard();
+                        (window as MainWindow).Main.Content = new CustomerDashboard(customer);
                     }
                 }
         }

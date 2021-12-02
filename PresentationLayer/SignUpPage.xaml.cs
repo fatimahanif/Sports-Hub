@@ -22,6 +22,7 @@ namespace PresentationLayer
     /// </summary>
     public partial class SignUpPage : Page
     {
+        Customer customer;
         public SignUpPage()
         {
             InitializeComponent();
@@ -38,22 +39,67 @@ namespace PresentationLayer
             }
         }
 
+        private void createCustomer() 
+        {
+            Gender gender = Gender.Female;
+            if (gender_combo.SelectedIndex==0) 
+            {
+                gender = Gender.Male;
+            }
+            else if (gender_combo.SelectedIndex == 1)
+            {
+                gender = Gender.Female;
+            }
+            else if (gender_combo.SelectedIndex == 2)
+            {
+                gender = Gender.PreferNotToSay;
+            }
+            customer = new Customer(firstName_txtBox.Text, lastName_txtBox.Text, userName_txtBox.Text, password_txtBox.Password, gender, (DateTime)dob_datePicker.SelectedDate, phone_txtBox.Text);
+            DataLists.customers.Add(customer);
+        }
+
         private void SignUp_Btn_Click(object sender, RoutedEventArgs e)
         {
             //checking data validity
+            //username
+            var usernamesList = from customer in DataLists.customers
+                                select new { customer.ID, customer.UserName };
+            foreach (var user in usernamesList)
+            {
+                if (user.UserName.Equals(userName_txtBox.Text))
+                {
+                    MessageBox.Show("Username already exsits!");
+                    return;
+                }
+            }
             // email
             if (!email_txtBox.Text.Contains("@")) 
             {
-                MessageBox.Show("Incorrect Email");
+                MessageBox.Show("Incorrect Email!");
                 return;
             }
             //password
-
+            if (!(password_txtBox.Password.Equals(confirmPass_txtBox.Password) && password_txtBox.Password.Length>8)) 
+            {
+                MessageBox.Show("Recheck Your Password!\nIt should be minimum 8 characters long");
+                return;
+            }
+            //phone number
+            for (int i = 0; i < phone_txtBox.Text.Length; i++) 
+            {
+                if (!char.IsDigit(phone_txtBox.Text[i])) 
+                {
+                    MessageBox.Show("Invalid Phone Number");
+                    return;
+                }
+            }
+            createCustomer();
+            // logging in
             foreach (Window window in Application.Current.Windows)
             {
                 if (window.GetType() == typeof(MainWindow))
                 {
-                    (window as MainWindow).Main.Content = new CustomerDashboard();
+                    (window as MainWindow).Main.Content = new CustomerDashboard(customer);
                 }
             }
         }

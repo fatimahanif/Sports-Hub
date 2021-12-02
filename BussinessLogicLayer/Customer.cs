@@ -21,9 +21,9 @@ namespace BussinessLogicLayer
         public DateTime DOB { get; set; }
         public string PhoneNumber { get; set; }
         //orders of the customer
-        public List<Order> Orders;
+        public List<Order> Orders { get; set; }
         //cart of the customer
-        public Cart cart;
+        public Cart cart { get; set; }
 
         //constructor
         public Customer(string firstname, string lastname, string username, string passwoord, Gender gender, DateTime dob, string phoneno) 

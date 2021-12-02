@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using DAL;
+using BussinessLogicLayer;
 
 namespace PresentationLayer
 {
@@ -20,9 +22,25 @@ namespace PresentationLayer
     /// </summary>
     public partial class CustomerDashboard : Page
     {
+        Customer customer;
         public CustomerDashboard()
         {
+            //products_listBox.ItemsSource = new List<string>() { "A", "B", "C"};
+            //products_listBox.ItemsSource = DataLists.products;
             InitializeComponent();
+            products_listBox.ItemsSource = DataLists.products;
+            orders_listbox.ItemsSource = customer.Orders;
+
+
+        }
+        public CustomerDashboard(Customer customer)
+        {
+            //products_listBox.ItemsSource = new List<string>() { "A", "B", "C"};
+            //products_listBox.ItemsSource = DataLists.products;
+            InitializeComponent();
+            this.customer = customer;
+            products_listBox.ItemsSource = DataLists.products;
+            orders_listbox.ItemsSource = customer.Orders;
         }
 
         private void exploreProducts_btn_Click(object sender, RoutedEventArgs e)
@@ -55,5 +73,26 @@ namespace PresentationLayer
         {
             menu_tab.SelectedIndex = 4;
         }
+
+        private void products_listBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            ListBox listBox = sender as ListBox;
+            Product product = listBox.SelectedItem as Product;
+            foreach (Product item in DataLists.products)
+            {
+                if (item.ProductID == product.ProductID) 
+                {
+                    displayProductDetails(item);
+                }
+            }
+        }
+
+        private void displayProductDetails( Product product ) 
+        {
+            ProductDetails productDetails = new ProductDetails(product);
+            productDetails.Show();
+            //MessageBox.Show(""+product.ProductName);
+        }
+
     }
 }
