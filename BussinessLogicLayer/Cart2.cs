@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace BussinessLogicLayer
 {
-    public class Cart
+    public class Cart2
     {
-        public Dictionary<Product, int> cartItems = new Dictionary<Product, int>(); // to store details of all products in cart
+        public Dictionary<Product2, int> cartItems = new Dictionary<Product2, int>(); // to store details of all products in cart
     }
 }

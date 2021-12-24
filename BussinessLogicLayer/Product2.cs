@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace BussinessLogicLayer
 {
     public enum ProductCategory { Badminton, Tennis, TableTennis}
-    public class Product
+    public class Product2
     {
         public static int totalProducts { get; set; } //to automatically assign an id
         //data fields
@@ -19,7 +19,7 @@ namespace BussinessLogicLayer
         public string Unit { get; set; }
 
         //constructor 
-        public Product(string name, int price, ProductCategory category, string imgPath, string unit )
+        public Product2(string name, int price, ProductCategory category, string imgPath, string unit )
         {
             ProductID = ++totalProducts;
             ProductName = name;

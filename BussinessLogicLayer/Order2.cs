@@ -9,7 +9,7 @@ namespace BussinessLogicLayer
     public enum OrderStatus { Shipped, Delivered, Pending }
     public enum PaymentMethod { Online, CashonDelivery }
     public enum PaymentStatus { Paid, Pending }
-    public class Order
+    public class Order2
     {
         //data fields
         public static int totalOrders { get; set; } //to autonatically assign an order id
@@ -20,10 +20,10 @@ namespace BussinessLogicLayer
         public int Discount { get; set; }
         public PaymentMethod paymentMethod { get; set; }
         public PaymentStatus paymentStatus { get; set; }
-        public List<Product> productsList = new List<Product>();
+        public List<Product2> productsList = new List<Product2>();
        // public int CustomerID;
         public DateTime OrderDate { get; set; }
-      public  Order(OrderStatus orderStatus, PaymentMethod paymentMethod, PaymentStatus paymentStatus)
+      public  Order2(OrderStatus orderStatus, PaymentMethod paymentMethod, PaymentStatus paymentStatus)
         {
             OrderID = ++totalOrders;
             this.orderStatus = orderStatus;

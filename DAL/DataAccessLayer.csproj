@@ -61,15 +61,58 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Cart.cs">
+      <DependentUpon>SportsHubDbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Customer.cs">
+      <DependentUpon>SportsHubDbModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="DataLists.cs" />
+    <Compile Include="Order.cs">
+      <DependentUpon>SportsHubDbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OrderDetail.cs">
+      <DependentUpon>SportsHubDbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Product.cs">
+      <DependentUpon>SportsHubDbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductCategory.cs">
+      <DependentUpon>SportsHubDbModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SportsHubDbModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SportsHubDbModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SportsHubDbModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SportsHubDbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SportsHubDbModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SportsHubDbModel.edmx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Database1.mdf">
+    <Content Include="SportsHubDb.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Database1_log.ldf">
-      <DependentUpon>Database1.mdf</DependentUpon>
+    <Content Include="SportsHubDbModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SportsHubDbModel.edmx</DependentUpon>
+      <LastGenOutput>SportsHubDbModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="SportsHubDbModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SportsHubDbModel.edmx</DependentUpon>
+      <LastGenOutput>SportsHubDbModel.cs</LastGenOutput>
+    </Content>
+    <Content Include="SportsHubDb_log.ldf">
+      <DependentUpon>SportsHubDb.mdf</DependentUpon>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="images\badminton_net.jpg" />
@@ -106,6 +149,13 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <EntityDeploy Include="SportsHubDbModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>SportsHubDbModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="SportsHubDbModel.edmx.diagram">
+      <DependentUpon>SportsHubDbModel.edmx</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

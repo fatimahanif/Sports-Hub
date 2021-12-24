@@ -8,7 +8,7 @@ namespace BussinessLogicLayer
 {
     //gender enum
     public enum Gender { Male, Female, PreferNotToSay}
-    public class Customer
+    public class Customer2
     {
         //data fields / properties
         public static int totalCustomers { get; set; } //to automatically assign an id
@@ -21,13 +21,13 @@ namespace BussinessLogicLayer
         public DateTime DOB { get; set; }
         public string PhoneNumber { get; set; }
         //orders of the customer
-        public List<Order> Orders { get; set; }
+        public List<Order2> Orders { get; set; }
         //cart of the customer
-        public List<Product> cart = new List<Product>();
+        public List<Product2> cart = new List<Product2>();
         //public Cart cart { get; set; }
 
         //constructor
-        public Customer(string firstname, string lastname, string username, string passwoord, Gender gender, DateTime dob, string phoneno) 
+        public Customer2(string firstname, string lastname, string username, string passwoord, Gender gender, DateTime dob, string phoneno) 
         {
             FirstName = firstname;
             LastName = lastname;
@@ -36,7 +36,7 @@ namespace BussinessLogicLayer
             this.gender = gender;
             DOB = dob;
             PhoneNumber = phoneno;
-            Orders = new List<Order>();
+            Orders = new List<Order2>();
            // cart = new Cart();
             totalCustomers++;
             ID = totalCustomers;

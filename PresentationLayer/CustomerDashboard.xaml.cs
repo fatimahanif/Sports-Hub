@@ -30,7 +30,7 @@ namespace PresentationLayer
             InitializeComponent();
             products_listBox.ItemsSource = DataLists.products;
             orders_listbox.ItemsSource = customer.Orders;
-
+            customerName_label.Content = ""+customer.FirstName + " " + customer.LastName;
 
         }
         public CustomerDashboard(Customer customer)

@@ -36,7 +36,7 @@ namespace PresentationLayer
             product_unit.Content += product.Unit;
             product_price.Content += product.Price.ToString();
             product_category.Content += product.productCategory.ToString();
-            //product_img.Source = product.ImagePath;
+            //product_img.ImageSource = product.ImagePath;
             this.customer = customer;
         }
 

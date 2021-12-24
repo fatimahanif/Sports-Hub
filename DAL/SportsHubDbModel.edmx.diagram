@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="16807b30bf014d92a0e9bba711899670" Name="Diagram1">
+        <EntityTypeShape EntityType="SportsHubDbModel.Cart" Width="1.5" PointX="5.375" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SportsHubDbModel.Customer" Width="1.5" PointX="7.625" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SportsHubDbModel.OrderDetail" Width="1.5" PointX="5.25" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SportsHubDbModel.Order" Width="1.5" PointX="10.125" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SportsHubDbModel.Product" Width="1.5" PointX="3" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SportsHubDbModel.ProductCategory" Width="1.5" PointX="0.625" PointY="4" IsExpanded="true" />
+        <AssociationConnector Association="SportsHubDbModel.FK__Cart__CustomerID__38996AB5" ManuallyRouted="false" />
+        <AssociationConnector Association="SportsHubDbModel.FK__Cart__ProductID__398D8EEE" ManuallyRouted="false" />
+        <AssociationConnector Association="SportsHubDbModel.FK__Orders__Customer__571DF1D5" ManuallyRouted="false" />
+        <AssociationConnector Association="SportsHubDbModel.FK__OrderDeta__Order__5629CD9C" ManuallyRouted="false" />
+        <AssociationConnector Association="SportsHubDbModel.FK__OrderDeta__Produ__4AB81AF0" ManuallyRouted="false" />
+        <AssociationConnector Association="SportsHubDbModel.FK__Product__Product__72C60C4A" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
