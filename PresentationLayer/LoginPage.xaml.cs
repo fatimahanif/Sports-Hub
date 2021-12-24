@@ -31,17 +31,17 @@ namespace PresentationLayer
         private bool checkUser()
         {
             //checking username and password validity
-            var usernamesList = from customer in DataLists.customers
-                                select customer;
-            foreach (var user in usernamesList)
-            {
-                //Console.WriteLine(user.ToString());
-                if (user.UserName.Equals(userName_txtBox.Text) && user.Password.Equals(password_txtBox.Password))
-                {
-                    customer = user;
-                    return true;
-                }
-            }
+            //var usernamesList = from customer in DataLists.customers
+            //                    select customer;
+            //foreach (var user in usernamesList)
+            //{
+            //    //Console.WriteLine(user.ToString());
+            //    if (user.UserName.Equals(userName_txtBox.Text) && user.Password.Equals(password_txtBox.Password))
+            //    {
+            //        customer = user;
+            //        return true;
+            //    }
+            //}
             return false;
         }
 

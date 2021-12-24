@@ -54,24 +54,24 @@ namespace PresentationLayer
             {
                 gender = Gender.PreferNotToSay;
             }
-            customer = new Customer(firstName_txtBox.Text, lastName_txtBox.Text, userName_txtBox.Text, password_txtBox.Password, gender, (DateTime)dob_datePicker.SelectedDate, phone_txtBox.Text);
-            DataLists.customers.Add(customer);
+            //customer = new Customer(firstName_txtBox.Text, lastName_txtBox.Text, userName_txtBox.Text, password_txtBox.Password, gender, (DateTime)dob_datePicker.SelectedDate, phone_txtBox.Text);
+            //DataLists.customers.Add(customer);
         }
 
         private void SignUp_Btn_Click(object sender, RoutedEventArgs e)
         {
             //checking data validity
             //username
-            var usernamesList = from customer in DataLists.customers
-                                select new { customer.ID, customer.UserName };
-            foreach (var user in usernamesList)
-            {
-                if (user.UserName.Equals(userName_txtBox.Text))
-                {
-                    MessageBox.Show("Username already exsits!");
-                    return;
-                }
-            }
+            //var usernamesList = from customer in DataLists.customers
+            //                    select new { customer.ID, customer.UserName };
+            //foreach (var user in usernamesList)
+            //{
+            //    if (user.UserName.Equals(userName_txtBox.Text))
+            //    {
+            //        MessageBox.Show("Username already exsits!");
+            //        return;
+            //    }
+            //}
             // email
             if (!email_txtBox.Text.Contains("@")) 
             {

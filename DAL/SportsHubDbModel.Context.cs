@@ -15,8 +15,7 @@ namespace DAL
     
     public partial class SportsHubDbEntities : DbContext
     {
-        public SportsHubDbEntities()
-            : base("name=SportsHubDbEntities")
+        public SportsHubDbEntities() : base("name=SportsHubDbEntities")
         {
         }
     

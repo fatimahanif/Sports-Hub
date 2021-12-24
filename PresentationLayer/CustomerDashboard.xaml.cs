@@ -28,7 +28,7 @@ namespace PresentationLayer
             //products_listBox.ItemsSource = new List<string>() { "A", "B", "C"};
             //products_listBox.ItemsSource = DataLists.products;
             InitializeComponent();
-            products_listBox.ItemsSource = DataLists.products;
+            //products_listBox.ItemsSource = DataLists.products;
             orders_listbox.ItemsSource = customer.Orders;
             customerName_label.Content = ""+customer.FirstName + " " + customer.LastName;
 
@@ -39,9 +39,9 @@ namespace PresentationLayer
             //products_listBox.ItemsSource = DataLists.products;
             InitializeComponent();
             this.customer = customer;
-            products_listBox.ItemsSource = DataLists.products;
-            cart_listBox.ItemsSource = customer.cart;
-            orders_listbox.ItemsSource = customer.Orders;
+            //products_listBox.ItemsSource = DataLists.products;
+            //cart_listBox.ItemsSource = customer.cart;
+            //orders_listbox.ItemsSource = customer.Orders;
         }
 
         private void exploreProducts_btn_Click(object sender, RoutedEventArgs e)
@@ -79,13 +79,13 @@ namespace PresentationLayer
         {
             ListBox listBox = sender as ListBox;
             Product product = listBox.SelectedItem as Product;
-            foreach (Product item in DataLists.products)
-            {
-                if (item.ProductID == product.ProductID) 
-                {
-                    displayProductDetails(item);
-                }
-            }
+            //foreach (Product item in DataLists.products)
+            //{
+            //    if (item.ProductID == product.ProductID) 
+            //    {
+            //        displayProductDetails(item);
+            //    }
+            //}
         }
 
         private void displayProductDetails( Product product )
