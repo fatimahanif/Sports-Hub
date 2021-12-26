@@ -23,6 +23,8 @@ namespace PresentationLayer
     public partial class LoginPage : Page
     {
         Customer customer;
+        SportsHubDbEntities db = new SportsHubDbEntities();
+
         public LoginPage()
         {
             InitializeComponent();
@@ -31,17 +33,18 @@ namespace PresentationLayer
         private bool checkUser()
         {
             //checking username and password validity
-            //var usernamesList = from customer in DataLists.customers
-            //                    select customer;
-            //foreach (var user in usernamesList)
-            //{
-            //    //Console.WriteLine(user.ToString());
-            //    if (user.UserName.Equals(userName_txtBox.Text) && user.Password.Equals(password_txtBox.Password))
-            //    {
-            //        customer = user;
-            //        return true;
-            //    }
-            //}
+            // SportsHubDbEntities db = new SportsHubDbEntities();
+            var usernamesList = from customer in db.Customers
+                                select customer;
+            foreach (var user in usernamesList)
+            {
+                //Console.WriteLine(user.ToString());
+                if (user.UserName.Equals(userName_txtBox.Text) && user.Password.Equals(password_txtBox.Password))
+                {
+                    customer = user;
+                    return true;
+                }
+            }
             return false;
         }
 

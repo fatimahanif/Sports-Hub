@@ -31,18 +31,19 @@ namespace PresentationLayer
         {
             InitializeComponent();
             this.product = product;
-            //product_id.Content += product.ProductID.ToString();
+            product_id.Content += product.ID.ToString();
             product_title.Content += product.ProductName;
             product_unit.Content += product.Unit;
             product_price.Content += product.Price.ToString();
-            //product_category.Content += product.productCategory.ToString();
-            //product_img.ImageSource = product.ImagePath;
+            product_category.Content += product.ProductCategory1.CategoryName;
+            ImageConverter converter = new ImageConverter();
+            product_image.Source = (ImageSource)converter.Convert(product.ID, null, converter, null);
             this.customer = customer;
         }
 
         private void Cart_Btn_Click(object sender, RoutedEventArgs e)
         {
-            //customer.cart.Add(this.product);
+          //  customer.Carts.Add(new Cart() { Customer = });
             MessageBox.Show("Product added to cart");
         }
     }

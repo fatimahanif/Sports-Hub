@@ -23,6 +23,7 @@ namespace PresentationLayer
     public partial class SignUpPage : Page
     {
         Customer customer;
+        SportsHubDbEntities db = new SportsHubDbEntities();
         public SignUpPage()
         {
             InitializeComponent();
@@ -39,10 +40,10 @@ namespace PresentationLayer
             }
         }
 
-        private void createCustomer() 
+        private void createCustomer()
         {
             Gender gender = Gender.Female;
-            if (gender_combo.SelectedIndex==0) 
+            if (gender_combo.SelectedIndex == 0)
             {
                 gender = Gender.Male;
             }
@@ -54,7 +55,18 @@ namespace PresentationLayer
             {
                 gender = Gender.PreferNotToSay;
             }
-            //customer = new Customer(firstName_txtBox.Text, lastName_txtBox.Text, userName_txtBox.Text, password_txtBox.Password, gender, (DateTime)dob_datePicker.SelectedDate, phone_txtBox.Text);
+            customer = new Customer
+            {
+                FirstName = firstName_txtBox.Text,
+                LastName = lastName_txtBox.Text,
+                UserName = userName_txtBox.Text,
+                Password = password_txtBox.Password,
+                Gender = gender.ToString(),
+                DOB = (DateTime)dob_datePicker.SelectedDate,
+                PhoneNumber = phone_txtBox.Text
+            };
+            db.Customers.Add(customer);
+            db.SaveChanges();
             //DataLists.customers.Add(customer);
         }
 
@@ -62,32 +74,32 @@ namespace PresentationLayer
         {
             //checking data validity
             //username
-            //var usernamesList = from customer in DataLists.customers
-            //                    select new { customer.ID, customer.UserName };
-            //foreach (var user in usernamesList)
-            //{
-            //    if (user.UserName.Equals(userName_txtBox.Text))
-            //    {
-            //        MessageBox.Show("Username already exsits!");
-            //        return;
-            //    }
-            //}
+            var usernamesList = from customer in db.Customers
+                                select customer;
+            foreach (var user in usernamesList)
+            {
+                if (user.UserName.Equals(userName_txtBox.Text))
+                {
+                    MessageBox.Show("Username already exsits!");
+                    return;
+                }
+            }
             // email
-            if (!email_txtBox.Text.Contains("@")) 
+            if (!email_txtBox.Text.Contains("@"))
             {
                 MessageBox.Show("Incorrect Email!");
                 return;
             }
             //password
-            if (!(password_txtBox.Password.Equals(confirmPass_txtBox.Password) && password_txtBox.Password.Length>8)) 
+            if (!(password_txtBox.Password.Equals(confirmPass_txtBox.Password) && password_txtBox.Password.Length > 8))
             {
                 MessageBox.Show("Recheck Your Password!\nIt should be minimum 8 characters long");
                 return;
             }
             //phone number
-            for (int i = 0; i < phone_txtBox.Text.Length; i++) 
+            for (int i = 0; i < phone_txtBox.Text.Length; i++)
             {
-                if (!char.IsDigit(phone_txtBox.Text[i])) 
+                if (!char.IsDigit(phone_txtBox.Text[i]))
                 {
                     MessageBox.Show("Invalid Phone Number");
                     return;

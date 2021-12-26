@@ -23,12 +23,15 @@ namespace PresentationLayer
     public partial class CustomerDashboard : Page
     {
         Customer customer;
+        SportsHubDbEntities db = new SportsHubDbEntities();
         public CustomerDashboard()
         {
             //products_listBox.ItemsSource = new List<string>() { "A", "B", "C"};
             //products_listBox.ItemsSource = DataLists.products;
             InitializeComponent();
-            //products_listBox.ItemsSource = DataLists.products;
+            var productsItems = from product in db.Products
+                                select product;
+            products_listBox.ItemsSource = productsItems.ToList();
             orders_listbox.ItemsSource = customer.Orders;
             customerName_label.Content = ""+customer.FirstName + " " + customer.LastName;
 
@@ -39,9 +42,11 @@ namespace PresentationLayer
             //products_listBox.ItemsSource = DataLists.products;
             InitializeComponent();
             this.customer = customer;
-            //products_listBox.ItemsSource = DataLists.products;
-            //cart_listBox.ItemsSource = customer.cart;
-            //orders_listbox.ItemsSource = customer.Orders;
+            var productsItems = from product in db.Products
+                                select product;
+            products_listBox.ItemsSource = productsItems.ToList();
+            cart_listBox.ItemsSource = customer.Carts;
+            orders_listbox.ItemsSource = customer.Orders;
         }
 
         private void exploreProducts_btn_Click(object sender, RoutedEventArgs e)
@@ -79,13 +84,16 @@ namespace PresentationLayer
         {
             ListBox listBox = sender as ListBox;
             Product product = listBox.SelectedItem as Product;
-            //foreach (Product item in DataLists.products)
-            //{
-            //    if (item.ProductID == product.ProductID) 
-            //    {
-            //        displayProductDetails(item);
-            //    }
-            //}
+            var productsItems = from p in db.Products
+                                select p;
+            //products_listBox.ItemsSource = productsItems.ToList();
+            foreach (Product item in productsItems)
+            {
+                if (item.ID == product.ID)
+                {
+                    displayProductDetails(item);
+                }
+            }
         }
 
         private void displayProductDetails( Product product )
@@ -98,6 +106,17 @@ namespace PresentationLayer
         private void cart_refresh_btn_Click(object sender, RoutedEventArgs e)
         {
             cart_listBox.Items.Refresh();
+        }
+
+        private void Cart_Btn_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Product added to cart");
+
+        }
+
+        private void productDetail_btn_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
