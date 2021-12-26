@@ -264,11 +264,11 @@
                                         </Grid.ColumnDefinitions>
                                         <StackPanel Orientation="Horizontal" Margin="20,20" Grid.Column="0">
                                             <Label Content="Order #" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="#663300" FontSize="22" FontWeight="Bold"/>
-                                            <Label Content="{Binding OrderID}" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="#663300" FontSize="22" FontWeight="Bold"/>
+                                            <Label Content="{Binding ID}" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="#663300" FontSize="22" FontWeight="Bold"/>
                                         </StackPanel>
                                         <StackPanel  Margin="20,20" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center">
                                             <Label  Content="Delivery Status"  VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="#4f2507" FontSize="20" FontWeight="SemiBold"/>
-                                            <Label Content="{Binding orderStatus}"  VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                            <Label Content="{Binding OrderStatus}"  VerticalAlignment="Center" HorizontalAlignment="Center"/>
                                         </StackPanel>
                                         <!--<StackPanel  Margin="20,20" Grid.Column="2" VerticalAlignment="Center" >
                                             <Label Content="Order Details" HorizontalAlignment="Center"  Foreground="#4f2507" FontSize="20" FontWeight="SemiBold"/>
@@ -292,7 +292,7 @@
                                         </StackPanel>
                                         <StackPanel  Margin="20,20" Grid.Column="5" VerticalAlignment="Center" HorizontalAlignment="Center">
                                             <Label  Content="Payment" VerticalAlignment="Center" HorizontalAlignment="Center"  Foreground="#4f2507" FontSize="20" FontWeight="SemiBold"/>
-                                            <Label Content="{Binding paymentMethod}" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                            <Label Content="{Binding PaymentMethod}" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                                         </StackPanel>
                                     </Grid>
                                 </DataTemplate>

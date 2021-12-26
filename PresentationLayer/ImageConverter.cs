@@ -27,41 +27,41 @@ namespace PresentationLayer
                    // Console.WriteLine("badminton");
                     break;
 
-                case 2:
+                case 3:
                     image = "images/badminton_shuttlecock.jpg";
                     break;
 
-                case 3:
+                case 5:
                     image = "images/badminton_net.jpg";
                     break;
-                case 4:
+                case 6:
                     image = "images/badminton_set.jpg";
                     break;
-                case 5:
+                case 7:
                     image = "images/tennis_racket.jpg";
                     break;
-                case 6:
+                case 8:
                     image = "images/tennis_ball.png";
                     break;
-                case 7:
+                case 9:
                     image = "images/tennis_net.jpg";
                     break;
-                case 8:
+                case 10:
                     image = "images/tennis_set.jpg";
                     break;
-                case 9:
+                case 11:
                     image = "images/tabletennis_racket.jpg";
                     break;
-                case 10:
+                case 12:
                     image = "images/tabletennis_ball.jpg";
                     break;
-                case 11:
+                case 13:
                     image = "images/tabletennis_net.jpg";
                     break;
-                case 12:
+                case 14:
                     image = "images/tabletennis_set.jpg";
                     break;
-                case 13:
+                case 15:
                     image = "images/tabletennis_table.png";
                     break;
             }

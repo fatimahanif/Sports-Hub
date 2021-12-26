@@ -34,7 +34,6 @@ namespace PresentationLayer
             products_listBox.ItemsSource = productsItems.ToList();
             orders_listbox.ItemsSource = customer.Orders;
             customerName_label.Content = ""+customer.FirstName + " " + customer.LastName;
-
         }
         public CustomerDashboard(Customer customer)
         {
