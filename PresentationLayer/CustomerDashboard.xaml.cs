@@ -127,5 +127,9 @@ namespace PresentationLayer
 
         }
 
+        private void profile_button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

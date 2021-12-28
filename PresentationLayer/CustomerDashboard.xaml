@@ -32,7 +32,7 @@
                             </StackPanel>
 
                             <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Center">
-                                <Button x:Name="profile_button" Grid.Column="1" Width="auto" Background="White" BorderBrush="White" Style="{DynamicResource ButtonStyle2}">
+                                <Button x:Name="profile_button" Grid.Column="1" Width="auto" Background="White" BorderBrush="White" Style="{DynamicResource ButtonStyle2}" Click="profile_button_Click">
                                     <StackPanel x:Name="profilepic_spanel" >
                                         <Ellipse x:Name="profilePic_ellipse" Width="100" Height="100">
                                             <Ellipse.Fill>

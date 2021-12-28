@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using DAL;
 using BussinessLogicLayer;
+using Microsoft.Win32;
 
 namespace PresentationLayer
 {
@@ -113,6 +114,19 @@ namespace PresentationLayer
                 {
                     (window as MainWindow).Main.Content = new CustomerDashboard(customer);
                 }
+            }
+        }
+
+        private void uploadPic_btn_Click(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog op = new OpenFileDialog();
+            op.Title = "Select a picture";
+            op.Filter = "All supported graphics|*.jpg;*.jpeg;*.png|" +
+              "JPEG (*.jpg;*.jpeg)|*.jpg;*.jpeg|" +
+              "Portable Network Graphic (*.png)|*.png";
+            if (op.ShowDialog() == true)
+            {
+                profilePic_img.Source = new BitmapImage(new Uri(op.FileName));
             }
         }
     }
