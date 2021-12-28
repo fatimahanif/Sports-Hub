@@ -19,7 +19,7 @@ namespace DAL
         public int ProductID { get; set; }
         public int ProductQuantity { get; set; }
     
-        public virtual Order Order { get; set; }
         public virtual Product Product { get; set; }
+        public virtual Order Order { get; set; }
     }
 }

@@ -261,6 +261,7 @@
                                             <ColumnDefinition Width="*"/>
                                             <ColumnDefinition Width="*"/>
                                             <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="*"/>
                                         </Grid.ColumnDefinitions>
                                         <StackPanel Orientation="Horizontal" Margin="20,20" Grid.Column="0">
                                             <Label Content="Order #" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="#663300" FontSize="22" FontWeight="Bold"/>
@@ -274,25 +275,29 @@
                                             <Label Content="Order Details" HorizontalAlignment="Center"  Foreground="#4f2507" FontSize="20" FontWeight="SemiBold"/>
                                             <Label Content="{Binding productsList}" Margin="20,0,0,0" HorizontalAlignment="Center"/>
                                         </StackPanel>-->
-                                        <StackPanel Orientation="Vertical"  Margin="20,20" Grid.Column="3" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                        <!--<StackPanel Orientation="Vertical"  Margin="20,20" Grid.Column="3" HorizontalAlignment="Center" VerticalAlignment="Center">
                                             <Label  Content="Price"  VerticalAlignment="Center" HorizontalAlignment="Center"  Foreground="#4f2507" FontSize="20" FontWeight="SemiBold"/>
                                             <StackPanel Orientation="Horizontal">
                                                 <Label  Content="PKR"  VerticalAlignment="Center" HorizontalAlignment="Center"/>
                                                 <Label  Content="{Binding Price}"  VerticalAlignment="Center" HorizontalAlignment="Center"/>
                                                 <Label  Content="/-"  VerticalAlignment="Center" HorizontalAlignment="Center"/>
                                             </StackPanel>
-                                        </StackPanel>
-                                        <StackPanel  Margin="20,20" Grid.Column="4" VerticalAlignment="Center" HorizontalAlignment="Center">
+                                        </StackPanel>-->
+                                        <!--<StackPanel  Margin="20,20" Grid.Column="4" VerticalAlignment="Center" HorizontalAlignment="Center">
                                             <Label  Content="Discount"  VerticalAlignment="Center" HorizontalAlignment="Center"  Foreground="#4f2507" FontSize="20" FontWeight="SemiBold"/>
                                             <StackPanel Orientation="Horizontal">
                                                 <Label  Content="PKR" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                                                 <Label  Content="{Binding Discount}" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                                                 <Label  Content="/-" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                                             </StackPanel>
-                                        </StackPanel>
+                                        </StackPanel>-->
                                         <StackPanel  Margin="20,20" Grid.Column="5" VerticalAlignment="Center" HorizontalAlignment="Center">
-                                            <Label  Content="Payment" VerticalAlignment="Center" HorizontalAlignment="Center"  Foreground="#4f2507" FontSize="20" FontWeight="SemiBold"/>
+                                            <Label  Content="Payment Method" VerticalAlignment="Center" HorizontalAlignment="Center"  Foreground="#4f2507" FontSize="20" FontWeight="SemiBold"/>
                                             <Label Content="{Binding PaymentMethod}" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                        </StackPanel>
+                                        <StackPanel  Margin="20,20" Grid.Column="6" VerticalAlignment="Center" HorizontalAlignment="Center">
+                                            <Label  Content="Payment Status" VerticalAlignment="Center" HorizontalAlignment="Center"  Foreground="#4f2507" FontSize="20" FontWeight="SemiBold"/>
+                                            <Label Content="{Binding PaymentStatus}" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                                         </StackPanel>
                                     </Grid>
                                 </DataTemplate>
@@ -343,7 +348,7 @@
                                                 </StackPanel>
                                                 <StackPanel Orientation="Horizontal">
                                                     <Label Content="Product Category: " HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-                                                    <Label Content="{Binding ProductCategory1}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                                                    <Label Content="{Binding ProductCategory1.CategoryName}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
                                                 </StackPanel>
                                             </StackPanel>
                                         </Grid>

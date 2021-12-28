@@ -44,8 +44,15 @@ namespace PresentationLayer
             var productsItems = from product in db.Products
                                 select product;
             products_listBox.ItemsSource = productsItems.ToList();
-            cart_listBox.ItemsSource = customer.Carts;
+
+            var cartList = from cart in db.Carts
+                           where cart.CustomerID == customer.ID
+                           select cart.Product;
+            cart_listBox.ItemsSource = cartList.ToList();
+
             orders_listbox.ItemsSource = customer.Orders;
+
+            customerName_label.Content = "" + customer.FirstName + " " + customer.LastName;
         }
 
         private void exploreProducts_btn_Click(object sender, RoutedEventArgs e)
@@ -104,18 +111,21 @@ namespace PresentationLayer
 
         private void cart_refresh_btn_Click(object sender, RoutedEventArgs e)
         {
+            var cartList = from cart in db.Carts
+                           where cart.CustomerID == customer.ID
+                           select cart.Product;
+            cart_listBox.ItemsSource = cartList.ToList();
             cart_listBox.Items.Refresh();
         }
 
         private void Cart_Btn_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Product added to cart");
+            //Product product = (Product) this.products_listBox.SelectedItem;
+            //db.Carts.Add(new Cart() {CustomerID = this.customer.ID, Customer = this.customer , Product = product, ProductID = product.ID} );
+            //MessageBox.Show("Product added to cart");
+            //db.SaveChanges();
 
         }
 
-        private void productDetail_btn_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
     }
 }

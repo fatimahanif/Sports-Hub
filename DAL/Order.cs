@@ -22,8 +22,6 @@ namespace DAL
         public int ID { get; set; }
         public System.DateTime OrderDate { get; set; }
         public string OrderStatus { get; set; }
-        public Nullable<decimal> Price { get; set; }
-        public Nullable<decimal> Discount { get; set; }
         public string PaymentMethod { get; set; }
         public string PaymentStatus { get; set; }
         public int CustomerID { get; set; }

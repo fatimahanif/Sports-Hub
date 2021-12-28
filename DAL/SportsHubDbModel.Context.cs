@@ -15,7 +15,8 @@ namespace DAL
     
     public partial class SportsHubDbEntities : DbContext
     {
-        public SportsHubDbEntities() : base("name=SportsHubDbEntities")
+        public SportsHubDbEntities()
+            : base("name=SportsHubDbEntities")
         {
         }
     
@@ -27,8 +28,8 @@ namespace DAL
         public DbSet<Cart> Carts { get; set; }
         public DbSet<Customer> Customers { get; set; }
         public DbSet<OrderDetail> OrderDetails { get; set; }
-        public DbSet<Order> Orders { get; set; }
         public DbSet<Product> Products { get; set; }
         public DbSet<ProductCategory> ProductCategories { get; set; }
+        public DbSet<Order> Orders { get; set; }
     }
 }

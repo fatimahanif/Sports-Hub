@@ -23,6 +23,7 @@ namespace PresentationLayer
     {
         Product product;
         Customer customer;
+        SportsHubDbEntities db = new SportsHubDbEntities();
         public ProductDetails()
         {
             InitializeComponent();
@@ -43,8 +44,9 @@ namespace PresentationLayer
 
         private void Cart_Btn_Click(object sender, RoutedEventArgs e)
         {
-          //  customer.Carts.Add(new Cart() { Customer = });
+            customer.Carts.Add(new Cart() { CustomerID = this.customer.ID, Customer = this.customer, Product = this.product, ProductID = this.product.ID});
             MessageBox.Show("Product added to cart");
+            db.SaveChanges();
         }
     }
 }
