@@ -66,7 +66,7 @@ namespace PresentationLayer
 
             var cartList = from cart in db.Carts
                            where cart.CustomerID == customer.ID
-                           select cart.Product;
+                           select cart;
             cart_listBox.ItemsSource = cartList.ToList();
 
             orders_listbox.ItemsSource = customer.Orders;
@@ -155,11 +155,7 @@ namespace PresentationLayer
         #region Refresh Cart Button
         private void cart_refresh_btn_Click(object sender, RoutedEventArgs e)
         {
-            var cartList = from cart in db.Carts
-                           where cart.CustomerID == customer.ID
-                           select cart.Product;
-            cart_listBox.ItemsSource = cartList.ToList();
-            cart_listBox.Items.Refresh();
+            RefreshHelperMethod();
         }
         #endregion
 
@@ -172,7 +168,7 @@ namespace PresentationLayer
         {
             var cartList = from cart in db.Carts
                            where cart.CustomerID == customer.ID
-                           select cart.Product;
+                           select cart;
             cart_listBox.ItemsSource = cartList.ToList();
             cart_listBox.Items.Refresh();
         }
@@ -286,17 +282,28 @@ namespace PresentationLayer
         #endregion
 
 
+        #region Delete item from cart button event handler
         private void Delete_From_Cart(object sender, RoutedEventArgs e)
         {
-            //carts_listBox_Button_Click(sender, e);
-            //Product productItem = this.cart_listBox.SelectedItem as Product;
+            carts_listBox_Button_Click(sender, e);
+            Cart cartItem = this.cart_listBox.SelectedItem as Cart;
+            db.Carts.Remove(cartItem);
+            db.SaveChanges();
+            //RefreshHelperMethod();
 
-            //db.Carts.Remove(cartItem);
         }
+        #endregion
 
         private void cart_listBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
+        }
+
+        //nutton event handler to place an order
+        private void cart_order_btn_Click(object sender, RoutedEventArgs e)
+        {
+            PlaceOrder order = new PlaceOrder(this.customer.ID);
+            order.Show();
         }
     }
 }

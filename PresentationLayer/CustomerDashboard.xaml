@@ -322,10 +322,12 @@
 
                 <TabItem x:Name="cartTabItem" Header="Cart" Height="50" Width="120" Style="{DynamicResource TabItemStyle1}">
                     <StackPanel>
+
                         <Grid x:Name="cart_header_grid">
                             <Label x:Name="cart_header_label" Content="Cart" FontSize="40" Foreground="#663300" />
                             <Button x:Name="cart_logout_btn" Content="Logout" VerticalAlignment="Center" Width="90" Click="Logout_Btn_Click" Height="45" FontSize="20" Background="#663300" Foreground="White" Style="{DynamicResource ButtonStyle1}" HorizontalAlignment="Right" Margin="0,0,50,0"/>
                             <Button x:Name="cart_refresh_btn" Content="Refresh" VerticalAlignment="Center" Width="90" Click="cart_refresh_btn_Click" Height="45" FontSize="20" Background="#663300" Foreground="White" Style="{DynamicResource ButtonStyle1}" HorizontalAlignment="Right" Margin="0,0,170,0"/>
+                            <Button x:Name="cart_order_btn" Content="Place Order" VerticalAlignment="Center" Width="120" Click="cart_order_btn_Click" Height="45" FontSize="20" Background="#663300" Foreground="White" Style="{DynamicResource ButtonStyle1}" HorizontalAlignment="Right" Margin="0,0,290,0"/>
                         </Grid>
 
                         <ListBox x:Name="cart_listBox" HorizontalAlignment="Center" FontSize="20" SelectionChanged="cart_listBox_SelectionChanged"
@@ -333,31 +335,35 @@
                             <ListBox.ItemTemplate>
                                 <DataTemplate>
                                     <StackPanel Width="900" VerticalAlignment="Center" HorizontalAlignment="Center">
-                                        <Label Margin="10,30,10,10"  Content="{Binding ProductName}" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontSize="26"/>
+                                        <Label Margin="10,30,10,10"  Content="{Binding Product.ProductName}" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontSize="26"/>
                                         <Grid Margin="10,10,10,20" HorizontalAlignment="Center" VerticalAlignment="Center">
                                             <Grid.ColumnDefinitions>
                                                 <ColumnDefinition/>
-                                                <ColumnDefinition/>
+                                                <ColumnDefinition Width="400"/>
                                                 <ColumnDefinition/>
                                             </Grid.ColumnDefinitions>
                                             <StackPanel Grid.Column="0">
                                                 <Border BorderThickness="3" BorderBrush="#eee" >
-                                                    <Image Width="200" Height="200" Source="{Binding ID , Converter={x:Static local:ImageConverter.imageConverter}}"/>
+                                                    <Image Width="200" Height="200" Source="{Binding Product.ID , Converter={x:Static local:ImageConverter.imageConverter}}"/>
                                                 </Border>
                                             </StackPanel>
                                             <StackPanel Grid.Column="1" VerticalAlignment="Center" Margin="50,0,0,0">
                                                 <StackPanel Orientation="Horizontal">
                                                     <Label Content="Price: PKR" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-                                                    <Label Content="{Binding Price}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                                                    <Label Content="{Binding Product.Price}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
                                                     <Label Content="/-" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
                                                 </StackPanel>
                                                 <StackPanel Orientation="Horizontal">
                                                     <Label Content="Unit: " HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-                                                    <Label Content="{Binding Unit}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                                                    <Label Content="{Binding Product.Unit}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
                                                 </StackPanel>
                                                 <StackPanel Orientation="Horizontal">
                                                     <Label Content="Product Category: " HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-                                                    <Label Content="{Binding ProductCategory1.CategoryName}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                                                    <Label Content="{Binding Product.ProductCategory1.CategoryName}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                                                </StackPanel>
+                                                <StackPanel Orientation="Horizontal">
+                                                    <Label Content="Quantity: " HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                                                    <Label Content="" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
                                                 </StackPanel>
                                             </StackPanel>
                                             <StackPanel Margin="80,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="2">
