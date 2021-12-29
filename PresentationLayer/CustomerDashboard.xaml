@@ -6,11 +6,13 @@
       xmlns:local="clr-namespace:PresentationLayer"
       mc:Ignorable="d" 
       d:DesignHeight="750" d:DesignWidth="1400"
-      Title="CustomerDashboard" Background="White" FontFamily="Candara">
+      Title="CustomerDashboard" Background="White" FontFamily="Candara"
+      >
 
     <Grid>
         <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
-            <TabControl x:Name="menu_tab" FontSize="18" Padding="20,20,20,20">
+            <TabControl x:Name="menu_tab" FontSize="18" Padding="20,20,20,20"
+                        SelectionChanged="TabControl_SelectionChanged">
                 <TabItem Header="Home" Height="50" Width="120" Style="{DynamicResource TabItemStyle1}">
                     <Grid x:Name="home_grid" Margin="0,0,0,30">
                         <Grid.RowDefinitions>
@@ -191,7 +193,8 @@
                             <Button x:Name="products_logout_btn" Content="Logout" VerticalAlignment="Center" Width="90" Click="Logout_Btn_Click" Height="45" FontSize="20" Background="#663300" Foreground="White" Style="{DynamicResource ButtonStyle1}" HorizontalAlignment="Right" Margin="0,0,50,0"/>
                         </Grid>
 
-                        <ListBox x:Name="products_listBox" HorizontalAlignment="Center" FontSize="20" SelectionChanged="products_listBox_SelectionChanged">
+                        <ListBox x:Name="products_listBox" HorizontalAlignment="Center" FontSize="20" SelectionChanged="products_listBox_SelectionChanged" 
+                                 ButtonBase.Click="products_listBox_Button_Click" SelectedIndex="0">
                             <ListBox.ItemTemplate>
                                 <DataTemplate>
                                     <StackPanel Width="900" VerticalAlignment="Center" HorizontalAlignment="Center">
@@ -225,8 +228,12 @@
                                                     </StackPanel>
                                                 </StackPanel>
                                                 <StackPanel Margin="80,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="2">
-                                                    <Button x:Name="addToCart_btn" Content="Add to Cart" Margin="0,0,0,0" Width="150" Click="Cart_Btn_Click" Height="45" FontSize="20" Background="#663300" Foreground="White" Style="{DynamicResource ButtonStyle1}" />
-                                                    <!--<Button x:Name="productDetail_btn" Content="View Details" Margin="0,30,0,0" Width="150" Click="productDetail_btn_Click" Height="45" FontSize="20" Background="#663300" Foreground="White" Style="{DynamicResource ButtonStyle1}" />-->
+                                                    <Button x:Name="addToCart_btn" Content="Add to Cart" Margin="0,0,0,0" Width="150" Click="Cart_Btn_Click"
+                                                            Height="45" FontSize="20" Background="#663300" Foreground="White" Style="{DynamicResource ButtonStyle1}"
+                                                            />
+                                                    <Button x:Name="productDetail_btn" Content="View Details" Margin="0,30,0,0" Width="150" Click="productDetail_btn_Click"
+                                                            Height="45" FontSize="20" Background="#663300" Foreground="White" Style="{DynamicResource ButtonStyle1}" />
+                                                    
                                                 </StackPanel>
                                             </Grid>
                                         </StackPanel>
@@ -313,21 +320,23 @@
 
                 </TabItem>
 
-                <TabItem Header="Cart" Height="50" Width="120" Style="{DynamicResource TabItemStyle1}">
+                <TabItem x:Name="cartTabItem" Header="Cart" Height="50" Width="120" Style="{DynamicResource TabItemStyle1}">
                     <StackPanel>
                         <Grid x:Name="cart_header_grid">
-                            <Label x:Name="cart_header_label" Content="Cart" FontSize="40" Foreground="#663300"/>
+                            <Label x:Name="cart_header_label" Content="Cart" FontSize="40" Foreground="#663300" />
                             <Button x:Name="cart_logout_btn" Content="Logout" VerticalAlignment="Center" Width="90" Click="Logout_Btn_Click" Height="45" FontSize="20" Background="#663300" Foreground="White" Style="{DynamicResource ButtonStyle1}" HorizontalAlignment="Right" Margin="0,0,50,0"/>
                             <Button x:Name="cart_refresh_btn" Content="Refresh" VerticalAlignment="Center" Width="90" Click="cart_refresh_btn_Click" Height="45" FontSize="20" Background="#663300" Foreground="White" Style="{DynamicResource ButtonStyle1}" HorizontalAlignment="Right" Margin="0,0,170,0"/>
                         </Grid>
 
-                        <ListBox x:Name="cart_listBox" HorizontalAlignment="Center" FontSize="20" SelectionChanged="products_listBox_SelectionChanged">
+                        <ListBox x:Name="cart_listBox" HorizontalAlignment="Center" FontSize="20" SelectionChanged="cart_listBox_SelectionChanged"
+                                 ButtonBase.Click="carts_listBox_Button_Click">
                             <ListBox.ItemTemplate>
                                 <DataTemplate>
-                                    <StackPanel Width="900">
+                                    <StackPanel Width="900" VerticalAlignment="Center" HorizontalAlignment="Center">
                                         <Label Margin="10,30,10,10"  Content="{Binding ProductName}" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontSize="26"/>
                                         <Grid Margin="10,10,10,20" HorizontalAlignment="Center" VerticalAlignment="Center">
                                             <Grid.ColumnDefinitions>
+                                                <ColumnDefinition/>
                                                 <ColumnDefinition/>
                                                 <ColumnDefinition/>
                                             </Grid.ColumnDefinitions>
@@ -350,6 +359,14 @@
                                                     <Label Content="Product Category: " HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
                                                     <Label Content="{Binding ProductCategory1.CategoryName}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
                                                 </StackPanel>
+                                            </StackPanel>
+                                            <StackPanel Margin="80,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="2">
+                                                <Button x:Name="delete_btn" Content="Delete Item" Margin="0,0,0,0" Width="150" Click="Delete_From_Cart"
+                                                            Height="45" FontSize="20" Background="#663300" Foreground="White" Style="{DynamicResource ButtonStyle1}"
+                                                            />
+                                                <!--<Button x:Name="productDetail_btn" Content="View Details" Margin="0,30,0,0" Width="150" Click="productDetail_btn_Click"
+                                                            Height="45" FontSize="20" Background="#663300" Foreground="White" Style="{DynamicResource ButtonStyle1}" />-->
+
                                             </StackPanel>
                                         </Grid>
                                     </StackPanel>

@@ -14,10 +14,19 @@ namespace DAL
     
     public partial class Product
     {
+        SportsHubDbEntities context;
         public Product()
         {
             this.Carts = new HashSet<Cart>();
             this.OrderDetails = new HashSet<OrderDetail>();
+
+        }
+
+        public Product(SportsHubDbEntities context)
+        {
+            this.Carts = new HashSet<Cart>();
+            this.OrderDetails = new HashSet<OrderDetail>();
+            this.context = context;
         }
     
         public int ID { get; set; }

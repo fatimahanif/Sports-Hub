@@ -14,12 +14,20 @@ namespace DAL
     
     public partial class Customer
     {
+        SportsHubDbEntities context;
         public Customer()
         {
             this.Carts = new HashSet<Cart>();
             this.Orders = new HashSet<Order>();
         }
-    
+
+        public Customer(SportsHubDbEntities context)
+        {
+            this.Carts = new HashSet<Cart>();
+            this.Orders = new HashSet<Order>();
+            this.context = context;
+        }
+
         public int ID { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
