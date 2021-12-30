@@ -317,7 +317,9 @@ namespace PresentationLayer
 
         private void orders_refresh_btn_Click(object sender, RoutedEventArgs e)
         {
+            db.SaveChanges();
             orders_listbox.ItemsSource = customer.Orders;
+            orders_listbox.Items.Refresh();
 
         }
     }

@@ -23,6 +23,7 @@ namespace PresentationLayer
         SportsHubDbEntities db = new SportsHubDbEntities();
         double totalPrice;
         int customerId;
+
         public PlaceOrder()
         {
             InitializeComponent();
@@ -84,7 +85,7 @@ namespace PresentationLayer
                 }
             }
 
-            ///selecting payment method
+            //selecting payment method
             string paymentMethod = "Online";
             string paymentStatus = "Paid";
             if (payment_method_combo.SelectedIndex == 1) 
@@ -106,7 +107,22 @@ namespace PresentationLayer
             db.Orders.Add(order);
             db.SaveChanges();
             MessageBox.Show("Order Placed!");
-            
+
+            Customer customer = (from c in db.Customers
+                                where c.ID == customerId
+                                select c).Single();
+            //adding product details
+            foreach (Cart item in customer.Carts)
+            {
+                OrderDetail detail = new OrderDetail()
+                {
+                    OrderID = order.ID,
+                    ProductID = item.ProductID,
+                    ProductQuantity = 1
+                };
+                db.OrderDetails.Add(detail);
+                db.SaveChanges();
+            }
 
             //make the cart empty
             var dataList = from cart in db.Carts
