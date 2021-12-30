@@ -71,6 +71,8 @@ namespace PresentationLayer
 
             orders_listbox.ItemsSource = customer.Orders;
 
+            payments_listbox.ItemsSource = customer.Orders;
+
             customerName_label.Content = "" + customer.FirstName + " " + customer.LastName;
 
 
@@ -251,11 +253,7 @@ namespace PresentationLayer
                 }
             }
 
-
         }
-
-
-
 
         #endregion
 
