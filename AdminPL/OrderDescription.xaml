@@ -9,6 +9,7 @@
     <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
         <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
             <Label x:Name="order_id" Content="Order ID: " Margin="5"/>
+            <Label x:Name="customer_id" Content="Customer ID: " Margin="5"/>
             <Label x:Name="order_status" Content="Order Status: " Margin="5"/>
             <Label x:Name="order_date" Content="Order Date: " Margin="5"/>
             <Label x:Name="payment_method" Content="Payment Method: " Margin="5"/>

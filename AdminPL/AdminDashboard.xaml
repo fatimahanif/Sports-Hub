@@ -38,7 +38,7 @@
                                                 </Grid.ColumnDefinitions>
                                                 <StackPanel Grid.Column="0">
                                                     <Border BorderThickness="3" BorderBrush="#eee" >
-                                                        <Image Width="200" Height="200" Source=""/>
+                                                        <Image Width="200" Height="200" Source="{Binding ID , Converter={x:Static local:ImageConverter.imageConverter}}"/>
                                                         <!--<Image Width="200" Height="200" Source="{Binding Image}"/>-->
                                                     </Border>
                                                 </StackPanel>
@@ -95,7 +95,8 @@
                                         <Grid.ColumnDefinitions>
                                             <ColumnDefinition Width="*"/>
                                             <ColumnDefinition Width="*"/>
-                                            <ColumnDefinition Width="3*"/>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="*"/>
                                             <ColumnDefinition Width="*"/>
                                             <ColumnDefinition Width="*"/>
                                             <ColumnDefinition Width="*"/>
@@ -105,15 +106,19 @@
                                             <Label Content="Order #" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="#663300" FontSize="22" FontWeight="Bold"/>
                                             <Label Content="{Binding ID}" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="#663300" FontSize="22" FontWeight="Bold"/>
                                         </StackPanel>
-                                        <StackPanel  Margin="20,20" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                        <StackPanel Orientation="Horizontal" Margin="20,20" Grid.Column="1">
+                                            <Label Content="Customer #" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="#663300" FontSize="22" FontWeight="Bold"/>
+                                            <Label Content="{Binding CustomerID}" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="#663300" FontSize="22" FontWeight="Bold"/>
+                                        </StackPanel>
+                                        <StackPanel  Margin="20,20" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center">
                                             <Label  Content="Delivery Status"  VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="#4f2507" FontSize="20" FontWeight="SemiBold"/>
                                             <Label Content="{Binding OrderStatus}"  VerticalAlignment="Center" HorizontalAlignment="Center"/>
                                         </StackPanel>
-                                        <StackPanel  Margin="20,20" Grid.Column="2" VerticalAlignment="Center" >
+                                        <StackPanel  Margin="20,20" Grid.Column="3" VerticalAlignment="Center" >
                                             <Label Content="Order Date" HorizontalAlignment="Center"  Foreground="#4f2507" FontSize="20" FontWeight="SemiBold"/>
                                             <Label Content="{Binding OrderDate}" Margin="20,0,0,0" HorizontalAlignment="Center"/>
                                         </StackPanel>
-                                        <StackPanel Orientation="Vertical"  Margin="20,20" Grid.Column="3" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                        <StackPanel Orientation="Vertical"  Margin="20,20" Grid.Column="4" HorizontalAlignment="Center" VerticalAlignment="Center">
                                             <Label  Content="Price"  VerticalAlignment="Center" HorizontalAlignment="Center"  Foreground="#4f2507" FontSize="20" FontWeight="SemiBold"/>
                                             <StackPanel Orientation="Horizontal">
                                                 <Label  Content="PKR"  VerticalAlignment="Center" HorizontalAlignment="Center"/>
@@ -121,14 +126,6 @@
                                                 <Label  Content="/-"  VerticalAlignment="Center" HorizontalAlignment="Center"/>
                                             </StackPanel>
                                         </StackPanel>
-                                        <!--<StackPanel  Margin="20,20" Grid.Column="4" VerticalAlignment="Center" HorizontalAlignment="Center">
-                                            <Label  Content="Discount"  VerticalAlignment="Center" HorizontalAlignment="Center"  Foreground="#4f2507" FontSize="20" FontWeight="SemiBold"/>
-                                            <StackPanel Orientation="Horizontal">
-                                                <Label  Content="PKR" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                                                <Label  Content="{Binding Discount}" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                                                <Label  Content="/-" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                                            </StackPanel>
-                                        </StackPanel>-->
                                         <StackPanel  Margin="20,20" Grid.Column="5" VerticalAlignment="Center" HorizontalAlignment="Center">
                                             <Label  Content="Payment Method" VerticalAlignment="Center" HorizontalAlignment="Center"  Foreground="#4f2507" FontSize="20" FontWeight="SemiBold"/>
                                             <Label Content="{Binding PaymentMethod}" VerticalAlignment="Center" HorizontalAlignment="Center"/>

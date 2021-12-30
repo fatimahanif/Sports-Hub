@@ -41,6 +41,7 @@ namespace AdminPL
         private void DisplayDetails()
         {
             this.order_id.Content += order.ID.ToString();
+            this.customer_id.Content += order.CustomerID.ToString();
             this.order_date.Content += order.OrderDate.ToString();
             this.order_status.Content += order.OrderStatus.ToString();
             this.payment_method.Content += order.PaymentMethod.ToString();

@@ -22,7 +22,7 @@ namespace AdminPL
     public partial class AdminDashboard : Page
     {
         #region Fields
-        Customer customer;
+        Admin admin;
         SportsHubDbEntities db = new SportsHubDbEntities();
         #endregion
 
@@ -40,7 +40,10 @@ namespace AdminPL
             var productsItems = from product in db.Products
                                 select product;
             products_listBox.ItemsSource = productsItems.ToList();
-            orders_listbox.ItemsSource = customer.Orders;
+            
+            orders_listbox.ItemsSource = db.Orders.ToList();
+            
+            payments_listbox.ItemsSource = db.Orders.ToList();
 
 
         }
@@ -75,7 +78,7 @@ namespace AdminPL
         private void displayProductDetails(int itemId) // (Prodct product)
         {
             //ProductDetails productDetails = new ProductDetails(product, customer);
-            ProductDetails productDetails = new ProductDetails(itemId, customer.ID);
+            ProductDetails productDetails = new ProductDetails(itemId);
             productDetails.Show();
             //MessageBox.Show(""+product.ProductName);
         }
@@ -172,8 +175,7 @@ namespace AdminPL
 
         private void orders_refresh_btn_Click(object sender, RoutedEventArgs e)
         {
-            db.SaveChanges();
-            orders_listbox.ItemsSource = customer.Orders;
+            orders_listbox.ItemsSource = db.Orders.ToList();
             orders_listbox.Items.Refresh();
 
         }
