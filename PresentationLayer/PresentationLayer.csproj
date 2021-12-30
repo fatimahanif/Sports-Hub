@@ -79,6 +79,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="OrderDescription.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="PlaceOrder.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -108,6 +112,9 @@
     <Compile Include="ImageConverter.cs" />
     <Compile Include="LoginPage.xaml.cs">
       <DependentUpon>LoginPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="OrderDescription.xaml.cs">
+      <DependentUpon>OrderDescription.xaml</DependentUpon>
     </Compile>
     <Compile Include="PlaceOrder.xaml.cs">
       <DependentUpon>PlaceOrder.xaml</DependentUpon>

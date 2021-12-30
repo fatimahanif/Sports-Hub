@@ -11,7 +11,7 @@
             <Grid>
                
 
-                <StackPanel x:Name="signup_spanel" Grid.Column="1" Grid.Row="1" VerticalAlignment="Center" Background="White">
+                <StackPanel x:Name="signup_spanel" VerticalAlignment="Center" Background="White">
 
                     <Label x:Name="edit_lbl" Content="Edit Profile" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="40" FontFamily="Candara"  Margin="0,25,0,0" Foreground="#663300"/>
 

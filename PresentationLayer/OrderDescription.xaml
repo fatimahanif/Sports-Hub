@@ -1,0 +1,21 @@
+﻿<Window x:Class="PresentationLayer.OrderDescription"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PresentationLayer"
+        mc:Ignorable="d"
+        Title="OrderDescription" Height="500" Width="700" ResizeMode="NoResize" FontFamily="Candara" FontSize="18">
+    <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+            <Label x:Name="order_id" Content="Order ID: " Margin="5"/>
+            <Label x:Name="order_status" Content="Order Status: " Margin="5"/>
+            <Label x:Name="order_date" Content="Order Date: " Margin="5"/>
+            <Label x:Name="payment_method" Content="Payment Method: " Margin="5"/>
+            <Label x:Name="payment_status" Content="Payment Status: " Margin="5"/>
+            <Label x:Name="price" Content="Price: " Margin="5"/>
+            <Label x:Name="order_details" Content="Order Details: " Margin="5"/>
+            <DataGrid x:Name="order_details_grid" Margin="5,10"/>
+        </StackPanel>
+    </Grid>
+</Window>

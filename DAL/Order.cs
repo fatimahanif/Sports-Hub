@@ -25,6 +25,7 @@ namespace DAL
         public string PaymentMethod { get; set; }
         public string PaymentStatus { get; set; }
         public int CustomerID { get; set; }
+        public Nullable<decimal> Price { get; set; }
     
         public virtual Customer Customer { get; set; }
         public virtual ICollection<OrderDetail> OrderDetails { get; set; }

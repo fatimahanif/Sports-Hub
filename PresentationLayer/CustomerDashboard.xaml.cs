@@ -300,11 +300,19 @@ namespace PresentationLayer
 
         }
 
-        //nutton event handler to place an order
+        //button event handler to place an order
         private void cart_order_btn_Click(object sender, RoutedEventArgs e)
         {
             PlaceOrder order = new PlaceOrder(this.customer.ID);
             order.Show();
+        }
+
+        private void orders_listbox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            ListBox listBox = sender as ListBox;
+            Order order = listBox.SelectedItem as Order;
+            OrderDescription description = new OrderDescription(order);
+            description.Show();
         }
     }
 }

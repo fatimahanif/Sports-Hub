@@ -257,7 +257,7 @@
                             <Button x:Name="orders_logout_btn" Content="Logout" VerticalAlignment="Center" Width="90" Click="Logout_Btn_Click" Height="45" FontSize="20" Background="#663300" Foreground="White" Style="{DynamicResource ButtonStyle1}" HorizontalAlignment="Right" Margin="0,0,50,0"/>
                         </Grid>
 
-                        <ListBox x:Name="orders_listbox" HorizontalAlignment="Center">
+                        <ListBox x:Name="orders_listbox" HorizontalAlignment="Center" SelectionChanged="orders_listbox_SelectionChanged">
                             <ListBox.ItemTemplate>
                                 <DataTemplate>
                                     <Grid Margin="0,5,0,5" HorizontalAlignment="Center">
@@ -278,18 +278,18 @@
                                             <Label  Content="Delivery Status"  VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="#4f2507" FontSize="20" FontWeight="SemiBold"/>
                                             <Label Content="{Binding OrderStatus}"  VerticalAlignment="Center" HorizontalAlignment="Center"/>
                                         </StackPanel>
-                                        <!--<StackPanel  Margin="20,20" Grid.Column="2" VerticalAlignment="Center" >
-                                            <Label Content="Order Details" HorizontalAlignment="Center"  Foreground="#4f2507" FontSize="20" FontWeight="SemiBold"/>
-                                            <Label Content="{Binding productsList}" Margin="20,0,0,0" HorizontalAlignment="Center"/>
-                                        </StackPanel>-->
-                                        <!--<StackPanel Orientation="Vertical"  Margin="20,20" Grid.Column="3" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                        <StackPanel  Margin="20,20" Grid.Column="2" VerticalAlignment="Center" >
+                                            <Label Content="Order Date" HorizontalAlignment="Center"  Foreground="#4f2507" FontSize="20" FontWeight="SemiBold"/>
+                                            <Label Content="{Binding OrderDate}" Margin="20,0,0,0" HorizontalAlignment="Center"/>
+                                        </StackPanel>
+                                        <StackPanel Orientation="Vertical"  Margin="20,20" Grid.Column="3" HorizontalAlignment="Center" VerticalAlignment="Center">
                                             <Label  Content="Price"  VerticalAlignment="Center" HorizontalAlignment="Center"  Foreground="#4f2507" FontSize="20" FontWeight="SemiBold"/>
                                             <StackPanel Orientation="Horizontal">
                                                 <Label  Content="PKR"  VerticalAlignment="Center" HorizontalAlignment="Center"/>
                                                 <Label  Content="{Binding Price}"  VerticalAlignment="Center" HorizontalAlignment="Center"/>
                                                 <Label  Content="/-"  VerticalAlignment="Center" HorizontalAlignment="Center"/>
                                             </StackPanel>
-                                        </StackPanel>-->
+                                        </StackPanel>
                                         <!--<StackPanel  Margin="20,20" Grid.Column="4" VerticalAlignment="Center" HorizontalAlignment="Center">
                                             <Label  Content="Discount"  VerticalAlignment="Center" HorizontalAlignment="Center"  Foreground="#4f2507" FontSize="20" FontWeight="SemiBold"/>
                                             <StackPanel Orientation="Horizontal">

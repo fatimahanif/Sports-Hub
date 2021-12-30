@@ -46,6 +46,7 @@
           <Property Name="PaymentMethod" Type="varchar" MaxLength="20" Nullable="false" />
           <Property Name="PaymentStatus" Type="varchar" MaxLength="10" Nullable="false" />
           <Property Name="CustomerID" Type="int" Nullable="false" />
+          <Property Name="Price" Type="money" />
         </EntityType>
         <EntityType Name="Product">
           <Key>
@@ -326,6 +327,7 @@
           <Property Name="CustomerID" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Customer" Relationship="SportsHubDbModel.FK__Orders__Customer__571DF1D5" FromRole="Order" ToRole="Customer" />
           <NavigationProperty Name="OrderDetails" Relationship="SportsHubDbModel.FK__OrderDeta__Order__5629CD9C" FromRole="Order" ToRole="OrderDetail" />
+          <Property Name="Price" Type="Decimal" Precision="19" Scale="4" />
         </EntityType>
         <Association Name="FK__Orders__Customer__571DF1D5">
           <End Type="SportsHubDbModel.Customer" Role="Customer" Multiplicity="1" />
@@ -415,6 +417,7 @@
           <EntitySetMapping Name="Orders">
             <EntityTypeMapping TypeName="SportsHubDbModel.Order">
               <MappingFragment StoreEntitySet="Orders">
+                <ScalarProperty Name="Price" ColumnName="Price" />
                 <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
                 <ScalarProperty Name="PaymentStatus" ColumnName="PaymentStatus" />
                 <ScalarProperty Name="PaymentMethod" ColumnName="PaymentMethod" />
