@@ -25,6 +25,7 @@
           <Property Name="Gender" Type="varchar" MaxLength="20" Nullable="false" />
           <Property Name="DOB" Type="date" Nullable="false" />
           <Property Name="PhoneNumber" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="Email" Type="varchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="OrderDetails">
           <Key>
@@ -197,6 +198,7 @@
           <Property Name="PhoneNumber" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="Carts" Relationship="Self.FK__Cart__CustomerID__38996AB5" FromRole="Customer" ToRole="Cart" />
           <NavigationProperty Name="Orders" Relationship="SportsHubDbModel.FK__Orders__Customer__571DF1D5" FromRole="Customer" ToRole="Order" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="OrderDetail">
           <Key>
@@ -367,6 +369,7 @@
           <EntitySetMapping Name="Customers">
             <EntityTypeMapping TypeName="SportsHubDbModel.Customer">
               <MappingFragment StoreEntitySet="Customer">
+                <ScalarProperty Name="Email" ColumnName="Email" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="FirstName" ColumnName="FirstName" />
                 <ScalarProperty Name="LastName" ColumnName="LastName" />

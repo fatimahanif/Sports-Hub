@@ -22,7 +22,7 @@ namespace PresentationLayer
     {
         SportsHubDbEntities db = new SportsHubDbEntities();
         double totalPrice;
-
+        int customerId;
         public PlaceOrder()
         {
             InitializeComponent();
@@ -32,6 +32,7 @@ namespace PresentationLayer
         public PlaceOrder(int customerId) 
         {
             InitializeComponent();
+            this.customerId = customerId;
             var dataList = from cart in db.Carts
                            where customerId == cart.CustomerID
                            select new 
@@ -65,6 +66,17 @@ namespace PresentationLayer
             //adding to order table;
             MessageBox.Show("Order Placed!");
             this.Close();
+            //make the cart empty
+            var dataList = from cart in db.Carts
+                           where customerId == cart.CustomerID
+                           select cart;
+            
+            foreach (var item in dataList)
+            {
+                db.Carts.Remove(item);
+            }
+
+            db.SaveChanges();
         }
     }
 }

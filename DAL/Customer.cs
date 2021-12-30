@@ -14,20 +14,12 @@ namespace DAL
     
     public partial class Customer
     {
-        SportsHubDbEntities context;
         public Customer()
         {
             this.Carts = new HashSet<Cart>();
             this.Orders = new HashSet<Order>();
         }
-
-        public Customer(SportsHubDbEntities context)
-        {
-            this.Carts = new HashSet<Cart>();
-            this.Orders = new HashSet<Order>();
-            this.context = context;
-        }
-
+    
         public int ID { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
@@ -36,6 +28,7 @@ namespace DAL
         public string Gender { get; set; }
         public System.DateTime DOB { get; set; }
         public string PhoneNumber { get; set; }
+        public string Email { get; set; }
     
         public virtual ICollection<Cart> Carts { get; set; }
         public virtual ICollection<Order> Orders { get; set; }

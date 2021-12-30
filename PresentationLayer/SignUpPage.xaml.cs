@@ -64,7 +64,8 @@ namespace PresentationLayer
                 Password = password_txtBox.Password,
                 Gender = gender.ToString(),
                 DOB = (DateTime)dob_datePicker.SelectedDate,
-                PhoneNumber = phone_txtBox.Text
+                PhoneNumber = phone_txtBox.Text,
+                Email = email_txtBox.Text
             };
             db.Customers.Add(customer);
             db.SaveChanges();

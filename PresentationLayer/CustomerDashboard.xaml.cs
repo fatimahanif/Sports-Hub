@@ -177,7 +177,8 @@ namespace PresentationLayer
         #region For the profile button click
         private void profile_button_Click(object sender, RoutedEventArgs e)
         {
-
+            EditProfile editProfile = new EditProfile(this.customer.ID);
+            editProfile.Show();
         }
         #endregion
 
