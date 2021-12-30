@@ -27,7 +27,7 @@ namespace AdminPL
         #endregion
 
 
-     
+
         #region Admin Dashboard Default Constructor
         /// <summary>
         /// dEFAULT CONSTRUCTOR
@@ -40,16 +40,16 @@ namespace AdminPL
             var productsItems = from product in db.Products
                                 select product;
             products_listBox.ItemsSource = productsItems.ToList();
-            
+
             orders_listbox.ItemsSource = db.Orders.ToList();
-            
+
             payments_listbox.ItemsSource = db.Orders.ToList();
 
 
         }
         #endregion
 
-       
+
         #region When the list Box seletion is chnaged
         private void products_listBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
@@ -97,7 +97,7 @@ namespace AdminPL
         }
         #endregion
 
-       
+
 
         #region Select the ListBox Item when Any Button is clicked
         /// <summary>
@@ -120,7 +120,7 @@ namespace AdminPL
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        
+
 
         #region When the view Button is clicked 
         /// <summary>
@@ -178,6 +178,58 @@ namespace AdminPL
             orders_listbox.ItemsSource = db.Orders.ToList();
             orders_listbox.Items.Refresh();
 
+        }
+
+        private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (orders_combo.SelectedIndex == 0)
+            {
+                orders_listbox.ItemsSource = db.Orders.ToList();
+            }
+            if (orders_combo.SelectedIndex == 1)
+            {
+                var orders = from o in db.Orders
+                             where o.OrderStatus.Equals("Pending")
+                             select o;
+                orders_listbox.ItemsSource = orders.ToList();
+            }
+            if (orders_combo.SelectedIndex == 2)
+            {
+                var orders = from o in db.Orders
+                             where o.OrderStatus.Equals("Shipped")
+                             select o;
+                orders_listbox.ItemsSource = orders.ToList();
+            }
+            if (orders_combo.SelectedIndex == 3)
+            {
+                var orders = from o in db.Orders
+                             where o.OrderStatus.Equals("Delivered")
+                             select o;
+                orders_listbox.ItemsSource = orders.ToList();
+            }
+
+        }
+
+        private void payments_combo_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (payments_combo.SelectedIndex == 0)
+            {
+                payments_listbox.ItemsSource = db.Orders.ToList();
+            }
+            if (payments_combo.SelectedIndex == 1)
+            {
+                var orders = from o in db.Orders
+                             where o.PaymentStatus.Equals("Pending")
+                             select o;
+                payments_listbox.ItemsSource = orders.ToList();
+            }
+            if (payments_combo.SelectedIndex == 2)
+            {
+                var orders = from o in db.Orders
+                             where o.PaymentStatus.Equals("Paid")
+                             select o;
+                payments_listbox.ItemsSource = orders.ToList();
+            }
         }
     }
 }

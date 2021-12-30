@@ -72,9 +72,6 @@
                             </ListBox.ItemTemplate>
                         </ListBox>
 
-
-
-
                     </StackPanel>
 
                 </TabItem>
@@ -86,6 +83,12 @@
                             <Label x:Name="orders_header_label" Content="Orders" FontSize="40" Foreground="#663300"/>
                             <Button x:Name="orders_logout_btn" Content="Logout" VerticalAlignment="Center" Width="90" Click="Logout_Btn_Click" Height="45" FontSize="20" Background="#663300" Foreground="White" Style="{DynamicResource ButtonStyle1}" HorizontalAlignment="Right" Margin="0,0,50,0"/>
                             <Button x:Name="orders_refresh_btn" Content="Refresh" VerticalAlignment="Center" Width="90" Click="orders_refresh_btn_Click" Height="45" FontSize="20" Background="#663300" Foreground="White" Style="{DynamicResource ButtonStyle1}" HorizontalAlignment="Right" Margin="0,0,170,0"/>
+                            <ComboBox x:Name="orders_combo" Width="200" Height="30" SelectionChanged="ComboBox_SelectionChanged">
+                                <ComboBoxItem Content="All Orders"/>
+                                <ComboBoxItem Content="Pending Orders"/>
+                                <ComboBoxItem Content="Shipped Orders"/>
+                                <ComboBoxItem Content="Delivered Orders"/>
+                            </ComboBox>
                         </Grid>
 
                         <ListBox x:Name="orders_listbox" HorizontalAlignment="Center" SelectionChanged="orders_listbox_SelectionChanged">
@@ -149,7 +152,11 @@
                             <Label x:Name="payments_header_label" Content="Payments" FontSize="40" Foreground="#663300"/>
                             <Button x:Name="payments_logout_btn" Content="Logout" VerticalAlignment="Center" Width="90" Click="Logout_Btn_Click" Height="45" FontSize="20" Background="#663300" Foreground="White" Style="{DynamicResource ButtonStyle1}" HorizontalAlignment="Right" Margin="0,0,50,0"/>
                             <Button x:Name="payments_refresh_btn" Content="Refresh" VerticalAlignment="Center" Width="90" Click="orders_refresh_btn_Click" Height="45" FontSize="20" Background="#663300" Foreground="White" Style="{DynamicResource ButtonStyle1}" HorizontalAlignment="Right" Margin="0,0,170,0"/>
-
+                            <ComboBox x:Name="payments_combo" Width="200" Height="30" SelectionChanged="payments_combo_SelectionChanged">
+                                <ComboBoxItem Content="All Payments"/>
+                                <ComboBoxItem Content="Pending Payments"/>
+                                <ComboBoxItem Content="Paid Orders"/>
+                            </ComboBox>
                         </Grid>
 
                         <ListBox x:Name="payments_listbox" HorizontalAlignment="Center" SelectionChanged="orders_listbox_SelectionChanged">
@@ -159,7 +166,8 @@
                                         <Grid.ColumnDefinitions>
                                             <ColumnDefinition Width="*"/>
                                             <ColumnDefinition Width="*"/>
-                                            <ColumnDefinition Width="3*"/>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="*"/>
                                             <ColumnDefinition Width="*"/>
                                             <ColumnDefinition Width="*"/>
                                             <ColumnDefinition Width="*"/>
@@ -169,15 +177,19 @@
                                             <Label Content="Order #" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="#663300" FontSize="22" FontWeight="Bold"/>
                                             <Label Content="{Binding ID}" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="#663300" FontSize="22" FontWeight="Bold"/>
                                         </StackPanel>
-                                        <StackPanel  Margin="20,20" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center">
+                                        <StackPanel Orientation="Horizontal" Margin="20,20" Grid.Column="1">
+                                            <Label Content="Customer #" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="#663300" FontSize="22" FontWeight="Bold"/>
+                                            <Label Content="{Binding CustomerID}" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="#663300" FontSize="22" FontWeight="Bold"/>
+                                        </StackPanel>
+                                        <StackPanel  Margin="20,20" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center">
                                             <Label  Content="Payment Method" VerticalAlignment="Center" HorizontalAlignment="Center"  Foreground="#4f2507" FontSize="20" FontWeight="SemiBold"/>
                                             <Label Content="{Binding PaymentMethod}" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                                         </StackPanel>
-                                        <StackPanel  Margin="20,20" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center">
+                                        <StackPanel  Margin="20,20" Grid.Column="3" VerticalAlignment="Center" HorizontalAlignment="Center">
                                             <Label  Content="Payment Status" VerticalAlignment="Center" HorizontalAlignment="Center"  Foreground="#4f2507" FontSize="20" FontWeight="SemiBold"/>
                                             <Label Content="{Binding PaymentStatus}" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                                         </StackPanel>
-                                        <StackPanel Orientation="Vertical"  Margin="20,20" Grid.Column="3" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                        <StackPanel Orientation="Vertical"  Margin="20,20" Grid.Column="4" HorizontalAlignment="Center" VerticalAlignment="Center">
                                             <Label  Content="Price"  VerticalAlignment="Center" HorizontalAlignment="Center"  Foreground="#4f2507" FontSize="20" FontWeight="SemiBold"/>
                                             <StackPanel Orientation="Horizontal">
                                                 <Label  Content="PKR"  VerticalAlignment="Center" HorizontalAlignment="Center"/>
@@ -185,11 +197,11 @@
                                                 <Label  Content="/-"  VerticalAlignment="Center" HorizontalAlignment="Center"/>
                                             </StackPanel>
                                         </StackPanel>
-                                        <StackPanel  Margin="20,20" Grid.Column="4" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                        <StackPanel  Margin="20,20" Grid.Column="5" HorizontalAlignment="Center" VerticalAlignment="Center">
                                             <Label  Content="Delivery Status"  VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="#4f2507" FontSize="20" FontWeight="SemiBold"/>
                                             <Label Content="{Binding OrderStatus}"  VerticalAlignment="Center" HorizontalAlignment="Center"/>
                                         </StackPanel>
-                                        <StackPanel  Margin="20,20" Grid.Column="5" VerticalAlignment="Center" >
+                                        <StackPanel  Margin="20,20" Grid.Column="6" VerticalAlignment="Center" >
                                             <Label Content="Order Date" HorizontalAlignment="Center"  Foreground="#4f2507" FontSize="20" FontWeight="SemiBold"/>
                                             <Label Content="{Binding OrderDate}" Margin="20,0,0,0" HorizontalAlignment="Center"/>
                                         </StackPanel>
