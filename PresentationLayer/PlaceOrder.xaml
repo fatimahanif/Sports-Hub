@@ -24,7 +24,7 @@
             
             <StackPanel Orientation="Horizontal" Margin="5">
                 <Label Width="150" Content="Payment Method"/>
-                <ComboBox x:Name="payment_method_combo" Width="150" SelectedIndex="0" SelectionChanged="payment_method_combo_SelectionChanged">
+                <ComboBox x:Name="payment_method_combo" Width="180"  SelectionChanged="payment_method_combo_SelectionChanged">
                     <ComboBoxItem Content="Online"/>
                     <ComboBoxItem Content="Cash-on-Delivery"/>
                 </ComboBox>
@@ -32,7 +32,7 @@
 
             <StackPanel Orientation="Horizontal" Margin="5" x:Name="card_spanel" Visibility="Visible">
                 <Label Width="150" Content="Card Number: "/>
-                <TextBox Width="150"/>
+                <TextBox x:Name="cardno_txtbox" Width="180" IsEnabled="False" VerticalContentAlignment="Center"/>
             </StackPanel>
 
             <Button x:Name="confirm_order_btn" Content="Confirm Order" VerticalAlignment="Center" Width="130" Click="confirm_order_btn_Click" Height="50" FontSize="18" Background="#663300" Foreground="White" Style="{DynamicResource ButtonStyle1}" HorizontalAlignment="Right" Margin="30,30"/>

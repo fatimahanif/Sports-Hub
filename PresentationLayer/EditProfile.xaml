@@ -5,13 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PresentationLayer"
         mc:Ignorable="d"
-        Title="Edit Profile" Height="600" Width="1000" ResizeMode="CanMinimize">
+        Title="Edit Profile" Height="600" Width="950" ResizeMode="CanMinimize">
     <Grid>
         <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
             <Grid>
-               
 
-                <StackPanel x:Name="signup_spanel" VerticalAlignment="Center" Background="White">
+
+                <StackPanel x:Name="edit_spanel" VerticalAlignment="Center" Background="White">
 
                     <Label x:Name="edit_lbl" Content="Edit Profile" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="40" FontFamily="Candara"  Margin="0,25,0,0" Foreground="#663300"/>
 
@@ -42,20 +42,26 @@
                                 <TextBox x:Name="email_txtBox" Height="25" Width="200" FontSize="16" Margin="20,0,0,0" VerticalContentAlignment="Center"/>
                             </StackPanel>
 
-                            <!--<StackPanel x:Name="password_spanel" Margin="0,20,0,0" Orientation="Horizontal" HorizontalAlignment="Left">
-                                <TextBlock x:Name="password_txtBlock" TextWrapping="Wrap" Text="Password:" FontSize="22" Width="180"/>
-                                <PasswordBox x:Name="password_txtBox" Height="25" Width="200" FontSize="16" Margin="20,0,0,0" VerticalContentAlignment="Center"/>
-                            </StackPanel>
 
-                            <StackPanel x:Name="confirmPass_spanel" Margin="0,20,0,0" Orientation="Horizontal" HorizontalAlignment="Left">
-                                <TextBlock x:Name="confirmPass_txtBlock" TextWrapping="Wrap" Text="Confirm Password:" FontSize="22" Width="180"/>
-                                <PasswordBox x:Name="confirmPass_txtBox" Height="25" Width="200" FontSize="16" Margin="20,0,0,0" VerticalContentAlignment="Center"/>
-                            </StackPanel>-->
 
                             <StackPanel x:Name="phone_spanel" Orientation="Horizontal" Margin="0,20,0,0" HorizontalAlignment="Left">
                                 <TextBlock x:Name="phone_txtBlock" TextWrapping="Wrap" Text="Phone Number:" FontSize="22" Width="180"/>
                                 <TextBox x:Name="phone_txtBox" Height="25" TextWrapping="Wrap" Width="200" FontSize="16" Margin="20,0,0,0" VerticalContentAlignment="Center"/>
                             </StackPanel>
+
+                            <Expander Header="Change Password" FontSize="18" Margin="0,20">
+                                <StackPanel>
+                                    <StackPanel x:Name="password_spanel" Margin="0,20,0,0" Orientation="Horizontal" HorizontalAlignment="Left">
+                                        <TextBlock x:Name="password_txtBlock" TextWrapping="Wrap" Text="Password:" FontSize="22" Width="180"/>
+                                        <PasswordBox x:Name="password_txtBox" Height="25" Width="200" FontSize="16" Margin="20,0,0,0" VerticalContentAlignment="Center"/>
+                                    </StackPanel>
+
+                                    <StackPanel x:Name="confirmPass_spanel" Margin="0,20,0,0" Orientation="Horizontal" HorizontalAlignment="Left">
+                                        <TextBlock x:Name="confirmPass_txtBlock" TextWrapping="Wrap" Text="Confirm Password:" FontSize="22" Width="180"/>
+                                        <PasswordBox x:Name="confirmPass_txtBox" Height="25" Width="200" FontSize="16" Margin="20,0,0,0" VerticalContentAlignment="Center"/>
+                                    </StackPanel>
+                                </StackPanel>
+                            </Expander>
 
                         </StackPanel>
 

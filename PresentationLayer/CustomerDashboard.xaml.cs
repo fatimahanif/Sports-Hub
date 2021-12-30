@@ -303,6 +303,8 @@ namespace PresentationLayer
         {
             PlaceOrder order = new PlaceOrder(this.customer.ID);
             order.Show();
+            orders_listbox.ItemsSource = customer.Orders;
+            orders_listbox.Items.Refresh();
         }
 
         private void orders_listbox_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -311,6 +313,12 @@ namespace PresentationLayer
             Order order = listBox.SelectedItem as Order;
             OrderDescription description = new OrderDescription(order);
             description.Show();
+        }
+
+        private void orders_refresh_btn_Click(object sender, RoutedEventArgs e)
+        {
+            orders_listbox.ItemsSource = customer.Orders;
+
         }
     }
 }

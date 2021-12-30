@@ -76,12 +76,12 @@ namespace PresentationLayer
                 MessageBox.Show("Incorrect Email!");
                 return;
             }
-            ////password
-            //if (!(password_txtBox.Password.Equals(confirmPass_txtBox.Password) && password_txtBox.Password.Length > 8))
-            //{
-            //    MessageBox.Show("Recheck Your Password!\nIt should be minimum 8 characters long");
-            //    return;
-            //}
+            //password
+            if (!(password_txtBox.Password.Equals(confirmPass_txtBox.Password) && password_txtBox.Password.Length > 8))
+            {
+                MessageBox.Show("Recheck Your Password!\nIt should be minimum 8 characters long");
+                return;
+            }
             //phone number
             for (int i = 0; i < phone_txtBox.Text.Length; i++)
             {

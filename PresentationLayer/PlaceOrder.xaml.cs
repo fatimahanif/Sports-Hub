@@ -51,34 +51,60 @@ namespace PresentationLayer
 
         private void payment_method_combo_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            //if (payment_method_combo.SelectedIndex == 1) 
-            //{
-            //    card_spanel.Visibility = Visibility.Hidden;
-            //}
-            //else if (payment_method_combo.SelectedIndex == 0) 
-            //{
-            //    card_spanel.Visibility = Visibility.Visible;
-            //}
+            if (payment_method_combo.SelectedIndex == 1)
+            {
+                //card_spanel.Visibility = Visibility.Hidden;
+                cardno_txtbox.IsEnabled = false;
+            }
+            else if (payment_method_combo.SelectedIndex == 0)
+            {
+                //card_spanel.Visibility = Visibility.Visible;
+                cardno_txtbox.IsEnabled = true;
+            }
         }
 
         private void confirm_order_btn_Click(object sender, RoutedEventArgs e)
         {
+            //checking card number
+            if (payment_method_combo.SelectedIndex == 0)
+            {
+                string cardNo = cardno_txtbox.Text;
+                if (cardNo.Length != 16)
+                {
+                    MessageBox.Show("Card number should be of 16 digits");
+                    return;
+                }
+                for (int i = 0; i < cardNo.Length; i++)
+                {
+                    if (!char.IsDigit(cardNo[i]))
+                    {
+                        MessageBox.Show("Invalid Number");
+                        return;
+                    }
+                }
+            }
+
+            ///selecting payment method
             string paymentMethod = "Online";
+            string paymentStatus = "Paid";
             if (payment_method_combo.SelectedIndex == 1) 
             {
                 paymentMethod = "Cash-on-Delivery";
+                paymentStatus = "Pending";
             }
 
             //adding to order table;
             Order order = new Order()
             {
                 CustomerID = customerId,
-                OrderDate = new DateTime(),
+                OrderDate = DateTime.Now,
                 Price = (decimal)totalPrice,
-                PaymentMethod = paymentMethod
+                PaymentMethod = paymentMethod,
+                OrderStatus = "Pending",
+                PaymentStatus = paymentStatus
             };
-            //db.Orders.Add(order);
-            //db.SaveChanges();
+            db.Orders.Add(order);
+            db.SaveChanges();
             MessageBox.Show("Order Placed!");
             
 
