@@ -63,9 +63,25 @@ namespace PresentationLayer
 
         private void confirm_order_btn_Click(object sender, RoutedEventArgs e)
         {
+            string paymentMethod = "Online";
+            if (payment_method_combo.SelectedIndex == 1) 
+            {
+                paymentMethod = "Cash-on-Delivery";
+            }
+
             //adding to order table;
+            Order order = new Order()
+            {
+                CustomerID = customerId,
+                OrderDate = new DateTime(),
+                Price = (decimal)totalPrice,
+                PaymentMethod = paymentMethod
+            };
+            //db.Orders.Add(order);
+            //db.SaveChanges();
             MessageBox.Show("Order Placed!");
-            this.Close();
+            
+
             //make the cart empty
             var dataList = from cart in db.Carts
                            where customerId == cart.CustomerID
@@ -77,6 +93,8 @@ namespace PresentationLayer
             }
 
             db.SaveChanges();
+
+            this.Close();
         }
     }
 }
