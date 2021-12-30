@@ -1,5 +1,4 @@
-﻿using DAL;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,15 +11,16 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using DAL;
 
-namespace PresentationLayer
+namespace AdminPL
 {
     /// <summary>
     /// Interaction logic for OrderDescription.xaml
     /// </summary>
     public partial class OrderDescription : Window
     {
-       // int orderid;
+        // int orderid;
         Order order;
         SportsHubDbEntities db = new SportsHubDbEntities();
 
@@ -30,7 +30,7 @@ namespace PresentationLayer
         }
 
         //parametrized constructor
-        public OrderDescription(Order order) 
+        public OrderDescription(Order order)
         {
             InitializeComponent();
             this.order = order;
@@ -38,7 +38,7 @@ namespace PresentationLayer
         }
 
         //utility method to display data
-        private void DisplayDetails() 
+        private void DisplayDetails()
         {
             this.order_id.Content += order.ID.ToString();
             this.order_date.Content += order.OrderDate.ToString();
@@ -49,7 +49,7 @@ namespace PresentationLayer
 
             var orderDetailsList = from detail in db.OrderDetails
                                    where detail.OrderID == this.order.ID
-                                   select new 
+                                   select new
                                    {
                                        ProductID = detail.Product.ID,
                                        detail.Product.ProductName,
@@ -59,7 +59,6 @@ namespace PresentationLayer
 
             order_details_grid.ItemsSource = orderDetailsList.ToList();
         }
-
 
     }
 }

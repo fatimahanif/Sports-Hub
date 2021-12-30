@@ -17,6 +17,7 @@
         <EntityTypeShape EntityType="SportsHubDbModel.Order" Width="1.5" PointX="9.875" PointY="4" />
         <AssociationConnector Association="SportsHubDbModel.FK__Orders__Customer__571DF1D5" />
         <AssociationConnector Association="SportsHubDbModel.FK__OrderDeta__Order__5629CD9C" />
+        <EntityTypeShape EntityType="SportsHubDbModel.Admin" Width="1.5" PointX="0.75" PointY="0.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

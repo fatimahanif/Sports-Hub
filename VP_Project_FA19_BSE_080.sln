@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BussinessLogicLayer", "Buss
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccessLayer", "DAL\DataAccessLayer.csproj", "{93BE232A-AA7E-4C61-8188-28A84D0C7452}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdminPL", "AdminPL\AdminPL.csproj", "{644F30E3-720E-45B1-96FB-D9B4D19AF0AF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{93BE232A-AA7E-4C61-8188-28A84D0C7452}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{93BE232A-AA7E-4C61-8188-28A84D0C7452}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{93BE232A-AA7E-4C61-8188-28A84D0C7452}.Release|Any CPU.Build.0 = Release|Any CPU
+		{644F30E3-720E-45B1-96FB-D9B4D19AF0AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{644F30E3-720E-45B1-96FB-D9B4D19AF0AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{644F30E3-720E-45B1-96FB-D9B4D19AF0AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{644F30E3-720E-45B1-96FB-D9B4D19AF0AF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

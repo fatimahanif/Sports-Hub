@@ -1,0 +1,210 @@
+﻿<Page x:Class="AdminPL.AdminDashboard"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:AdminPL"
+      mc:Ignorable="d" 
+      d:DesignHeight="750" d:DesignWidth="1400"
+       Background="White" FontFamily="Candara"
+      Title="AdminDashboard">
+
+    <Grid>
+        <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+            <TabControl x:Name="menu_tab" FontSize="18" Padding="20,20,20,20"
+                        SelectionChanged="TabControl_SelectionChanged">
+                
+                <TabItem Header="Products" Height="50" Width="120" Style="{DynamicResource TabItemStyle1}">
+
+                    <StackPanel x:Name="productsTab_spanel" Margin="0,0,0,30">
+
+                        <Grid x:Name="products_header_grid">
+                            <Label x:Name="products_header_label" Content="Products" FontSize="40" Foreground="#663300"/>
+                            <Button x:Name="products_logout_btn" Content="Logout" VerticalAlignment="Center" Width="90" Click="Logout_Btn_Click" Height="45" FontSize="20" Background="#663300" Foreground="White" Style="{DynamicResource ButtonStyle1}" HorizontalAlignment="Right" Margin="0,0,50,0"/>
+                        </Grid>
+
+                        <ListBox x:Name="products_listBox" HorizontalAlignment="Center" FontSize="20" SelectionChanged="products_listBox_SelectionChanged" 
+                                 ButtonBase.Click="products_listBox_Button_Click" SelectedIndex="0">
+                            <ListBox.ItemTemplate>
+                                <DataTemplate>
+                                    <StackPanel Width="900" VerticalAlignment="Center" HorizontalAlignment="Center">
+                                        <Label Margin="10,30,10,10"  Content="{Binding ProductName}" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontSize="26"/>
+                                        <StackPanel Orientation="Horizontal">
+                                            <Grid Margin="10,10,10,20" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition/>
+                                                    <ColumnDefinition/>
+                                                    <ColumnDefinition/>
+                                                </Grid.ColumnDefinitions>
+                                                <StackPanel Grid.Column="0">
+                                                    <Border BorderThickness="3" BorderBrush="#eee" >
+                                                        <Image Width="200" Height="200" Source=""/>
+                                                        <!--<Image Width="200" Height="200" Source="{Binding Image}"/>-->
+                                                    </Border>
+                                                </StackPanel>
+                                                <StackPanel Grid.Column="1" VerticalAlignment="Center" Margin="50,0,0,0">
+                                                    <StackPanel Orientation="Horizontal">
+                                                        <Label Content="Price: PKR" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                                                        <Label Content="{Binding Price}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                                                        <Label Content="/-" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                                                    </StackPanel>
+                                                    <StackPanel Orientation="Horizontal">
+                                                        <Label Content="Unit: " HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                                                        <Label Content="{Binding Unit}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                                                    </StackPanel>
+                                                    <StackPanel Orientation="Horizontal">
+                                                        <Label Content="Product Category: " HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                                                        <Label Content="{Binding ProductCategory1.CategoryName}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                                                    </StackPanel>
+                                                </StackPanel>
+                                                <StackPanel Margin="80,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="2">
+                                                    <!--<Button x:Name="addToCart_btn" Content="Add to Cart" Margin="0,0,0,0" Width="150" Click="Cart_Btn_Click"
+                                                            Height="45" FontSize="20" Background="#663300" Foreground="White" Style="{DynamicResource ButtonStyle1}"
+                                                            />-->
+                                                    <Button x:Name="productDetail_btn" Content="View Details" Margin="0,30,0,0" Width="150" Click="productDetail_btn_Click"
+                                                            Height="45" FontSize="20" Background="#663300" Foreground="White" Style="{DynamicResource ButtonStyle1}" />
+
+                                                </StackPanel>
+                                            </Grid>
+                                        </StackPanel>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </ListBox.ItemTemplate>
+                        </ListBox>
+
+
+
+
+                    </StackPanel>
+
+                </TabItem>
+
+                <TabItem Header="Orders" Height="50" Width="120" Style="{DynamicResource TabItemStyle1}">
+                    <StackPanel x:Name="ordersTab_spanel" Margin="0,0,0,30">
+
+                        <Grid x:Name="orders_header_grid">
+                            <Label x:Name="orders_header_label" Content="Orders" FontSize="40" Foreground="#663300"/>
+                            <Button x:Name="orders_logout_btn" Content="Logout" VerticalAlignment="Center" Width="90" Click="Logout_Btn_Click" Height="45" FontSize="20" Background="#663300" Foreground="White" Style="{DynamicResource ButtonStyle1}" HorizontalAlignment="Right" Margin="0,0,50,0"/>
+                            <Button x:Name="orders_refresh_btn" Content="Refresh" VerticalAlignment="Center" Width="90" Click="orders_refresh_btn_Click" Height="45" FontSize="20" Background="#663300" Foreground="White" Style="{DynamicResource ButtonStyle1}" HorizontalAlignment="Right" Margin="0,0,170,0"/>
+                        </Grid>
+
+                        <ListBox x:Name="orders_listbox" HorizontalAlignment="Center" SelectionChanged="orders_listbox_SelectionChanged">
+                            <ListBox.ItemTemplate>
+                                <DataTemplate>
+                                    <Grid Margin="0,5,0,5" HorizontalAlignment="Center">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="3*"/>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="*"/>
+                                        </Grid.ColumnDefinitions>
+                                        <StackPanel Orientation="Horizontal" Margin="20,20" Grid.Column="0">
+                                            <Label Content="Order #" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="#663300" FontSize="22" FontWeight="Bold"/>
+                                            <Label Content="{Binding ID}" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="#663300" FontSize="22" FontWeight="Bold"/>
+                                        </StackPanel>
+                                        <StackPanel  Margin="20,20" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                            <Label  Content="Delivery Status"  VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="#4f2507" FontSize="20" FontWeight="SemiBold"/>
+                                            <Label Content="{Binding OrderStatus}"  VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                        </StackPanel>
+                                        <StackPanel  Margin="20,20" Grid.Column="2" VerticalAlignment="Center" >
+                                            <Label Content="Order Date" HorizontalAlignment="Center"  Foreground="#4f2507" FontSize="20" FontWeight="SemiBold"/>
+                                            <Label Content="{Binding OrderDate}" Margin="20,0,0,0" HorizontalAlignment="Center"/>
+                                        </StackPanel>
+                                        <StackPanel Orientation="Vertical"  Margin="20,20" Grid.Column="3" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                            <Label  Content="Price"  VerticalAlignment="Center" HorizontalAlignment="Center"  Foreground="#4f2507" FontSize="20" FontWeight="SemiBold"/>
+                                            <StackPanel Orientation="Horizontal">
+                                                <Label  Content="PKR"  VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                                <Label  Content="{Binding Price}"  VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                                <Label  Content="/-"  VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                            </StackPanel>
+                                        </StackPanel>
+                                        <!--<StackPanel  Margin="20,20" Grid.Column="4" VerticalAlignment="Center" HorizontalAlignment="Center">
+                                            <Label  Content="Discount"  VerticalAlignment="Center" HorizontalAlignment="Center"  Foreground="#4f2507" FontSize="20" FontWeight="SemiBold"/>
+                                            <StackPanel Orientation="Horizontal">
+                                                <Label  Content="PKR" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                                <Label  Content="{Binding Discount}" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                                <Label  Content="/-" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                            </StackPanel>
+                                        </StackPanel>-->
+                                        <StackPanel  Margin="20,20" Grid.Column="5" VerticalAlignment="Center" HorizontalAlignment="Center">
+                                            <Label  Content="Payment Method" VerticalAlignment="Center" HorizontalAlignment="Center"  Foreground="#4f2507" FontSize="20" FontWeight="SemiBold"/>
+                                            <Label Content="{Binding PaymentMethod}" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                        </StackPanel>
+                                        <StackPanel  Margin="20,20" Grid.Column="6" VerticalAlignment="Center" HorizontalAlignment="Center">
+                                            <Label  Content="Payment Status" VerticalAlignment="Center" HorizontalAlignment="Center"  Foreground="#4f2507" FontSize="20" FontWeight="SemiBold"/>
+                                            <Label Content="{Binding PaymentStatus}" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                        </StackPanel>
+                                    </Grid>
+                                </DataTemplate>
+                            </ListBox.ItemTemplate>
+                        </ListBox>
+
+                    </StackPanel>
+                </TabItem>
+
+                <TabItem Header="Payments" Height="50" Width="120" Style="{DynamicResource TabItemStyle1}">
+                    <StackPanel x:Name="paymentsTab_spanel" Margin="0,0,0,30">
+
+                        <Grid x:Name="payments_header_grid">
+                            <Label x:Name="payments_header_label" Content="Payments" FontSize="40" Foreground="#663300"/>
+                            <Button x:Name="payments_logout_btn" Content="Logout" VerticalAlignment="Center" Width="90" Click="Logout_Btn_Click" Height="45" FontSize="20" Background="#663300" Foreground="White" Style="{DynamicResource ButtonStyle1}" HorizontalAlignment="Right" Margin="0,0,50,0"/>
+                            <Button x:Name="payments_refresh_btn" Content="Refresh" VerticalAlignment="Center" Width="90" Click="orders_refresh_btn_Click" Height="45" FontSize="20" Background="#663300" Foreground="White" Style="{DynamicResource ButtonStyle1}" HorizontalAlignment="Right" Margin="0,0,170,0"/>
+
+                        </Grid>
+
+                        <ListBox x:Name="payments_listbox" HorizontalAlignment="Center" SelectionChanged="orders_listbox_SelectionChanged">
+                            <ListBox.ItemTemplate>
+                                <DataTemplate>
+                                    <Grid Margin="0,5,0,5" HorizontalAlignment="Center">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="3*"/>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="*"/>
+                                        </Grid.ColumnDefinitions>
+                                        <StackPanel Orientation="Horizontal" Margin="20,20" Grid.Column="0">
+                                            <Label Content="Order #" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="#663300" FontSize="22" FontWeight="Bold"/>
+                                            <Label Content="{Binding ID}" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="#663300" FontSize="22" FontWeight="Bold"/>
+                                        </StackPanel>
+                                        <StackPanel  Margin="20,20" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center">
+                                            <Label  Content="Payment Method" VerticalAlignment="Center" HorizontalAlignment="Center"  Foreground="#4f2507" FontSize="20" FontWeight="SemiBold"/>
+                                            <Label Content="{Binding PaymentMethod}" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                        </StackPanel>
+                                        <StackPanel  Margin="20,20" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center">
+                                            <Label  Content="Payment Status" VerticalAlignment="Center" HorizontalAlignment="Center"  Foreground="#4f2507" FontSize="20" FontWeight="SemiBold"/>
+                                            <Label Content="{Binding PaymentStatus}" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                        </StackPanel>
+                                        <StackPanel Orientation="Vertical"  Margin="20,20" Grid.Column="3" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                            <Label  Content="Price"  VerticalAlignment="Center" HorizontalAlignment="Center"  Foreground="#4f2507" FontSize="20" FontWeight="SemiBold"/>
+                                            <StackPanel Orientation="Horizontal">
+                                                <Label  Content="PKR"  VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                                <Label  Content="{Binding Price}"  VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                                <Label  Content="/-"  VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                            </StackPanel>
+                                        </StackPanel>
+                                        <StackPanel  Margin="20,20" Grid.Column="4" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                            <Label  Content="Delivery Status"  VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="#4f2507" FontSize="20" FontWeight="SemiBold"/>
+                                            <Label Content="{Binding OrderStatus}"  VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                        </StackPanel>
+                                        <StackPanel  Margin="20,20" Grid.Column="5" VerticalAlignment="Center" >
+                                            <Label Content="Order Date" HorizontalAlignment="Center"  Foreground="#4f2507" FontSize="20" FontWeight="SemiBold"/>
+                                            <Label Content="{Binding OrderDate}" Margin="20,0,0,0" HorizontalAlignment="Center"/>
+                                        </StackPanel>
+                                    </Grid>
+                                </DataTemplate>
+                            </ListBox.ItemTemplate>
+                        </ListBox>
+
+                    </StackPanel>
+                </TabItem>
+
+            </TabControl>
+        </ScrollViewer>
+    </Grid>
+</Page>
