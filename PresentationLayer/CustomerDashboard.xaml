@@ -233,7 +233,7 @@
                                                             />
                                                     <Button x:Name="productDetail_btn" Content="View Details" Margin="0,30,0,0" Width="150" Click="productDetail_btn_Click"
                                                             Height="45" FontSize="20" Background="#663300" Foreground="White" Style="{DynamicResource ButtonStyle1}" />
-                                                    
+
                                                 </StackPanel>
                                             </Grid>
                                         </StackPanel>
@@ -363,16 +363,6 @@
                                             <Label Content="Order Date" HorizontalAlignment="Center"  Foreground="#4f2507" FontSize="20" FontWeight="SemiBold"/>
                                             <Label Content="{Binding OrderDate}" Margin="20,0,0,0" HorizontalAlignment="Center"/>
                                         </StackPanel>
-                                        
-                                        <!--<StackPanel  Margin="20,20" Grid.Column="4" VerticalAlignment="Center" HorizontalAlignment="Center">
-                                            <Label  Content="Discount"  VerticalAlignment="Center" HorizontalAlignment="Center"  Foreground="#4f2507" FontSize="20" FontWeight="SemiBold"/>
-                                            <StackPanel Orientation="Horizontal">
-                                                <Label  Content="PKR" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                                                <Label  Content="{Binding Discount}" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                                                <Label  Content="/-" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                                            </StackPanel>
-                                        </StackPanel>-->
-                                        
                                     </Grid>
                                 </DataTemplate>
                             </ListBox.ItemTemplate>
